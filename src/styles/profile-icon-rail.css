@@ -1,0 +1,68 @@
+.profile-icon-rail {
+  position: fixed;
+  left: 2px;
+  top: 50%;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transform: translateY(-50%);
+}
+
+.profile-icon-rail a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--color-ink);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+  transition: transform 260ms var(--ease-primary), opacity 260ms var(--ease-primary);
+}
+
+.profile-icon-rail a:hover {
+  transform: translateX(3px);
+  opacity: 0.72;
+}
+
+.profile-icon-rail svg {
+  width: 19px;
+  height: 19px;
+}
+
+@media (max-width: 809px) {
+  .profile-icon-rail {
+    left: 8px;
+    gap: 8px;
+  }
+
+  .profile-icon-rail a {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .profile-icon-rail svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.profile-icon-rail .resume-icon {
+  color: #fb6900;
+}
+
+.profile-icon-rail .github-icon {
+  color: #181717;
+}
+
+.profile-icon-rail .linkedin-icon {
+  color: #0a66c2;
+}
+
+.profile-icon-rail .email-icon {
+  color: #ea4335;
+}
