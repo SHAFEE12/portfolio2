@@ -39,7 +39,9 @@
   gap: clamp(58px, 8vw, 110px);
   min-height: 560px;
   padding: 60px;
-  background: var(--color-card);
+  /* background: var(--color-card); */
+   background: #37353E; 
+  
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-soft);

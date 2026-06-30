@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { fadeUp } from '../../utils/motion.js';
-import profileImage from '../../assets/shafee.jpg';
+import profileImage from '../../assets/shafee.png';
 
 const resumeUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/view?usp=sharing';
 const resumePreviewUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/preview';

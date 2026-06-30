@@ -62,6 +62,7 @@
 
 .mobile-role {
   display: none;
+  color:white;
 }
 
 .hero-summary {
@@ -114,7 +115,7 @@
 }
 
 .hero-visual {
-  margin-top :80px;
+  margin-top:120px;
   position: relative;
   min-height: 420px;
   will-change: transform, opacity;
@@ -125,7 +126,7 @@
   inset: 0;
   margin: 0;
   overflow: hidden;
-  background: var(--color-placeholder);
+  /* background: var(--color-placeholder); */
   border: 1px solid var(--color-border-strong);
   border-radius: 26px;
 }
@@ -204,8 +205,8 @@
 .resume-dialog {
   position: relative;
   z-index: 1;
-  width: min(560px, calc(100vw - 32px));
-  max-height: min(560px, calc(100vh - 118px));
+  width: min(460px, calc(100vw - 32px));
+  max-height: min(960px, calc(100vh - 118px));
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--color-border-strong);

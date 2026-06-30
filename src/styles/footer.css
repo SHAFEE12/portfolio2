@@ -1,8 +1,8 @@
 .site-footer {
   width: 100%;
   max-width: none;
-  padding-block: clamp(26px, 5vw, 70px) var(--space-page);
-  padding-inline: var(--space-page);
+  /* padding-block: clamp(26px, 5vw, 70px) var(--space-page); */
+  /* padding-inline: var(--space-page); */
 }
 
 .footer-panel {
@@ -10,7 +10,7 @@
   color: #fff;
   background: var(--color-dark);
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: clamp(24px, 4vw, 34px);
+  /* border-radius: clamp(24px, 4vw, 34px); */
   box-shadow: var(--shadow-soft);
   will-change: transform, opacity;
 }

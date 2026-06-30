@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { revealItem, staggerContainer } from '../../utils/motion.js';
+// import AboutUnderline from "../../components/ui/AboutUnderline";
 
 export default function CredentialsSection() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -78,8 +79,11 @@ export default function CredentialsSection() {
                   </div>
                 </article>
               ))}
+               <AboutUnderline />
             </div>
+         
           </div>
+          
         </div>
       )}
 

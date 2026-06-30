@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import AIAssistant from '../AIAssistant';
 import { profile } from '../../data/profile.js';
 
 const resumeUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/view?usp=sharing';
@@ -46,13 +48,80 @@ const links = [
 ];
 
 export default function ProfileIconRail() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
-    <nav className="profile-icon-rail" aria-label="Profile links">
-      {links.map((link) => (
-        <a key={link.label} className={link.className} href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'} aria-label={link.label}>
-          {link.icon}
-        </a>
-      ))}
-    </nav>
+    <>
+      <nav className="profile-icon-rail" aria-label="Profile links">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            className={link.className}
+            href={link.href}
+            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+            aria-label={link.label}
+            onClick={(event) => event.preventDefault()}
+            style={{ pointerEvents: 'none' }}
+          >
+            {link.icon}
+          </a>
+        ))}
+      </nav>
+
+      <button
+        type="button"
+        onClick={() => setIsChatOpen(true)}
+        aria-label="Open AI assistant"
+        style={{
+          position: 'fixed',
+          right: '0.75rem',
+          bottom: '0.75rem',
+          zIndex: 1200,
+          width: '110px',
+          height: '110px',
+          border: 'none',
+          background: 'transparent',
+          padding: 0,
+          cursor: 'pointer',
+          overflow: 'hidden'
+        }}
+      >
+        <iframe
+          title="AI assistant robot"
+          src="https://my.spline.design/genkubgreetingrobot-gfRhqDcP1XHjOce6dWQ3x77F/"
+          frameBorder="0"
+          style={{ width: '190%', height: '140%', border: 'none', pointerEvents: 'none', marginLeft: '-20%', marginTop: '-10%' }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            left: '0',
+            right: '0',
+            bottom: '0',
+            height: '24px',
+            background: 'rgba(0, 0, 0, 0.95)',
+            zIndex: 1201,
+            pointerEvents: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#ffffff',
+            fontSize: '0.72rem',
+            fontWeight: 600,
+            letterSpacing: '0.04em',
+            textTransform: 'none'
+          }}
+        >
+          Shafee.AI
+        </div>
+      </button>
+
+      {isChatOpen ? (
+        <div style={{ position: 'fixed', right: '1.25rem', bottom: '7.5rem', zIndex: 1201, width: 'min(92vw, 360px)' }}>
+          <AIAssistant onClose={() => setIsChatOpen(false)} />
+        </div>
+      ) : null}
+    </>
   );
 }

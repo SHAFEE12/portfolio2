@@ -17,8 +17,8 @@
 .section-grid h2,
 .section-heading h2,
 .portfolio-heading h2 {
-  max-width: 760px;
-  font-size: clamp(2.55rem, 2vw, 2.6rem);
+  max-width: 9960px;
+  font-size: clamp(1.55rem, 1vw, 1.6rem);
 }
 
 .prose-card,
@@ -67,7 +67,7 @@
 .skill-card h3 {
   margin: 0 0 12px;
   color: #fff;
-  font-size: 1.35rem;
+  font-size: 0.60rem;
   font-weight: 650;
   
 }
@@ -120,4 +120,8 @@
 
 .about-underline:hover {
   color: #4f46e5;
+}
+
+#skills-title{
+   font-size:20px;
 }

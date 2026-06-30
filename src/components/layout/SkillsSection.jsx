@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { revealItem, staggerContainer } from '../../utils/motion.js';
 
+
 const techIconUrls = {
   HTML: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
   CSS: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',

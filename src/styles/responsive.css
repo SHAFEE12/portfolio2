@@ -31,10 +31,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-bottom {
+  /* .footer-bottom {
     grid-template-columns: 1fr;
     align-items: start;
-  }
+  } */
 }
 
 @media (max-width: 809px) {
@@ -68,19 +68,20 @@
   }
 
   .intro-panel {
+      margin-top:100px;
     min-height: auto;
     padding: 26px;
     border-radius: 22px;
   }
 
   .intro-copy h1 {
-    max-width: 100%;
-    font-size: clamp(3rem, 16vw, 4.1rem);
+    max-width: 220%;
+    font-size: clamp(2rem, 8vw, 2.1rem);
   }
 
   .intro-copy,
   .hero-visual {
-    max-width: 260px;
+    max-width: 560px;
   }
 
   .desktop-role {
@@ -139,7 +140,7 @@
   .section-grid h2,
   .section-heading h2,
   .portfolio-heading h2 {
-    font-size: clamp(2.3rem, 11vw, 3.5rem);
+    font-size: clamp(1.3rem, 5vw, 1.5rem);
   }
 
   .skill-grid {
@@ -164,10 +165,10 @@
   .project-content h3 {
     font-size: clamp(1.6rem, 8vw, 2.3rem);
   }
-
+/* 
   .footer-panel {
     padding: 34px 24px;
-  }
+  } */
 
   .footer-bottom nav,
   .social-links {
