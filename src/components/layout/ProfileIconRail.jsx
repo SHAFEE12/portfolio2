@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import AIAssistant from '../AIAssistant';
 import { profile } from '../../data/profile.js';
+
+const Robot = React.lazy(() => import('./Robot.jsx'));
 
 const resumeUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/view?usp=sharing';
 
@@ -49,77 +51,83 @@ const links = [
 
 export default function ProfileIconRail() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isRailOpen, setIsRailOpen] = useState(true);
+  const [showSpline, setShowSpline] = useState(false);
+  const [robotLoaded, setRobotLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSpline(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
       <nav className="profile-icon-rail" aria-label="Profile links">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            className={link.className}
-            href={link.href}
-            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-            rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-            aria-label={link.label}
-            onClick={(event) => event.preventDefault()}
-            style={{ pointerEvents: 'none' }}
-          >
-            {link.icon}
-          </a>
-        ))}
+        <button
+          type="button"
+          className={`profile-icon-toggle ${isRailOpen ? 'open' : 'closed'}`}
+          aria-label={isRailOpen ? 'Hide profile links' : 'Show profile links'}
+          onClick={() => setIsRailOpen((prev) => !prev)}
+        >
+          {isRailOpen ? (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 6 15 12 9 18" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+            </svg>
+          )}
+        </button>
+
+        <div className={`profile-icon-links ${isRailOpen ? 'visible' : 'hidden'}`}>
+          {links.map((link) => (
+            <a
+              key={link.label}
+              className={link.className}
+              href={link.href}
+              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+              aria-label={link.label}
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
       </nav>
 
       <button
         type="button"
+        className="ai-assistant-trigger"
         onClick={() => setIsChatOpen(true)}
         aria-label="Open AI assistant"
-        style={{
-          position: 'fixed',
-          right: '0.75rem',
-          bottom: '0.75rem',
-          zIndex: 1200,
-          width: '110px',
-          height: '110px',
-          border: 'none',
-          background: 'transparent',
-          padding: 0,
-          cursor: 'pointer',
-          overflow: 'hidden'
-        }}
       >
-        <iframe
-          title="AI assistant robot"
-          src="https://my.spline.design/genkubgreetingrobot-gfRhqDcP1XHjOce6dWQ3x77F/"
-          frameBorder="0"
-          style={{ width: '190%', height: '140%', border: 'none', pointerEvents: 'none', marginLeft: '-20%', marginTop: '-10%' }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            left: '0',
-            right: '0',
-            bottom: '0',
-            height: '24px',
-            background: 'rgba(0, 0, 0, 0.95)',
-            zIndex: 1201,
-            pointerEvents: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#ffffff',
-            fontSize: '0.72rem',
-            fontWeight: 600,
-            letterSpacing: '0.04em',
-            textTransform: 'none'
-          }}
-        >
-          Shafee.AI
+        <div className="robot-frame-wrapper">
+          <Suspense fallback={<div className="robot-loading" />}>
+            {showSpline ? (
+              <Robot
+                hidden={!robotLoaded}
+                onLoad={() => setRobotLoaded(true)}
+              />
+            ) : (
+              <div className="robot-loading" />
+            )}
+          </Suspense>
+          {showSpline && !robotLoaded ? (
+            <div className="robot-loading overlay" />
+          ) : null}
         </div>
+        {showSpline ? (
+          <div className="robot-label">Shafee.AI</div>
+        ) : null}
       </button>
 
       {isChatOpen ? (
         <div style={{ position: 'fixed', right: '1.25rem', bottom: '7.5rem', zIndex: 1201, width: 'min(92vw, 360px)' }}>
-          <AIAssistant onClose={() => setIsChatOpen(false)} />
+          <AIAssistant open={isChatOpen} onClose={() => setIsChatOpen(false)} />
         </div>
       ) : null}
     </>

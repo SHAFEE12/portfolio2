@@ -8,7 +8,8 @@
 .footer-panel {
   padding: clamp(42px, 8vw, 92px);
   color: #fff;
-  background: var(--color-dark);
+  /* background: var(--color-dark); */
+  /* background:#000000; */
   border: 1px solid rgba(255, 255, 255, 0.14);
   /* border-radius: clamp(24px, 4vw, 34px); */
   box-shadow: var(--shadow-soft);
@@ -24,7 +25,7 @@
 }
 
 .footer-main h2 {
-  font-size: clamp(3rem, 7vw, 7.4rem);
+  font-size: clamp(3rem, 4vw, 4.4rem);
 }
 
 .email-pill {
@@ -53,7 +54,58 @@
 .social-links {
   display: flex;
   gap: 22px;
+
   color: #fff;
+}
+
+@media (max-width: 809px) {
+  .site-footer.container {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .footer-panel {
+    padding: 34px 20px;
+    border-radius: 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 48px;
+  }
+
+  .footer-bottom nav,
+  .social-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-bottom p {
+    width: 100%;
+  }
+}
+
+@media (min-width: 810px) {
+  /* nudge the left column of the footer slightly to the right on large screens */
+  .footer-bottom > :first-child {
+    margin-left: -8px;
+    will-change: transform;
+    transform: translateX(-8px) !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  /* slightly stronger shift on very large screens */
+  .footer-bottom > p {
+    margin-left: -20px;
+    will-change: transform;
+    transform: translateX(-20px) !important;
+  }
 }
 
 

@@ -44,7 +44,10 @@ export default function IntroSection() {
       >
         <div className="intro-copy">
           {/* <p className="section-label">{profile.location}</p> */}
-          <h1 id="intro-title">{profile.name}</h1>
+          <h1 id="intro-title">
+            Shafee<span className="intro-name-suffix">'s</span>{' '}
+            <span className="intro-name-portfolio">Portfolio</span>
+          </h1>
           <p className="hero-role">
             <span className="desktop-role">{profile.role}</span>
             <span className="mobile-role">Full Stack Developer | DSA | B.Tech CSE</span>
@@ -78,12 +81,12 @@ export default function IntroSection() {
             />
           </figure>
           <div className="hero-stat hero-stat-one">
-            <span>2023 - 2027</span>
-            <strong>B.Tech CSE</strong>
+            {/* <span>2023 - 2027</span> */}
+            <strong>MERN + DSA</strong>
           </div>
           <div className="hero-stat hero-stat-two">
-            <span>Focus</span>
-            <strong>MERN + DSA</strong>
+            {/* <span>Focus</span> */}
+            <strong>Interview Ready</strong>
           </div>
         </div>
       </motion.div>

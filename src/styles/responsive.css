@@ -124,12 +124,12 @@
   }
 
   .hero-stat-one {
-    left: 12px;
+    left: -12px;
     bottom: 14px;
   }
 
   .hero-stat-two {
-    right: 12px;
+    right: -12px;
     top: 14px;
   }
 

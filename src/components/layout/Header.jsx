@@ -38,7 +38,7 @@ export default function Header() {
           <span />
         </button>
 
-        <ul className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
+        <ul className="nav-links desktop-nav">
           {navItems.map((item) => (
             <li key={item.href}>
               <a href={item.href} onClick={() => setIsMenuOpen(false)}>
@@ -48,6 +48,18 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+
+      <div className={`mobile-nav ${isMenuOpen ? 'is-open' : ''}`}>
+        <ul className="nav-links">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} onClick={() => setIsMenuOpen(false)}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </motion.header>
   );
 }
