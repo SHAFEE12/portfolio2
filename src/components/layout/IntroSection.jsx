@@ -81,12 +81,12 @@ export default function IntroSection() {
             />
           </figure>
           <div className="hero-stat hero-stat-one">
-            {/* <span>2023 - 2027</span> */}
-            <strong>MERN + DSA</strong>
+             <span>MERN + DSA</span> 
+            {/* <strong>MERN + DSA</strong> */}
           </div>
           <div className="hero-stat hero-stat-two">
-            {/* <span>Focus</span> */}
-            <strong>Interview Ready</strong>
+            <span>Interview Ready</span>
+            {/* <strong>Interview Ready</strong> */}
           </div>
         </div>
       </motion.div>

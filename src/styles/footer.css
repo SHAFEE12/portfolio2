@@ -1,38 +1,76 @@
-.site-footer {
-  width: 100%;
-  max-width: none;
+ .site-footer {
+ 
+ width: 100%;
+  max-width: none; 
   /* padding-block: clamp(26px, 5vw, 70px) var(--space-page); */
   /* padding-inline: var(--space-page); */
-}
+ } 
 
 .footer-panel {
+  background: #212121;
   padding: clamp(42px, 8vw, 92px);
   color: #fff;
   /* background: var(--color-dark); */
   /* background:#000000; */
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: none;
   /* border-radius: clamp(24px, 4vw, 34px); */
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
   will-change: transform, opacity;
+  
 }
 
 .footer-main {
-  max-width: 860px;
+  background: #212121;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* padding: clamp(24px, 4vw, 32px); */
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  /* border-radius: 0; */
+  background: transparent;
+  /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04); */
 }
 
 .footer-main .section-label {
-  color: var(--color-dark-muted);
+  /* background: #212121; */
+  color: rgb(230, 102, 10);
+  border-right: 1px solid rgba(255, 255, 255, 0.36);
+  width: 130px;        
+  height: 60px;  
+  padding: 20px;   
+  margin-bottom:0;     
+
+
 }
 
-.footer-main h2 {
-  font-size: clamp(3rem, 4vw, 4.4rem);
+.footer-main .section-label span {
+  color:blue;
+  padding:30px;
 }
+.footer-main h2 {
+  width: 100%;
+  margin-top: 0;
+  background: #212121;
+  padding: 45px;
+  font-size: clamp(3rem, 4vw, 4.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+/* .footer-divider {
+  width: min(220px, 100%);
+  height: 1px;
+  margin: 22px 0 0;
+  background: rgba(255, 255, 255, 0.28);
+} */
 
 .email-pill {
-  margin-top: 36px;
-  color: var(--color-ink);
-  background: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 2;
+  background: #212121;
+  display: inline-flex;
+  /* margin-top: 24px; */
+  color: white;
+animation: none;
+  /* border: 1px solid rgba(255, 255, 255); */
 }
 
 .footer-bottom {
@@ -67,6 +105,11 @@
   .footer-panel {
     padding: 34px 20px;
     border-radius: 0;
+  }
+
+  .footer-divider {
+    width: 100%;
+    margin-top: 18px;
   }
 
   .footer-bottom {

@@ -27,6 +27,34 @@
 // export default PortfolioCard;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { forwardRef } from 'react';
 import AnimatedButton from '../ui/AnimatedButton.jsx';
 
@@ -42,14 +70,6 @@ const PortfolioCard = forwardRef(function PortfolioCard(
       {...props}
     >
       <div className="project-content">
-        <p className="project-category">{project.category}</p>
-
-        <h3>{project.title}</h3>
-
-        <p>{project.description}</p>
-
-        <p className="project-stack">{project.stack}</p>
-
         <div className="project-actions">
           <AnimatedButton href={project.image}>
             View Project
@@ -58,7 +78,14 @@ const PortfolioCard = forwardRef(function PortfolioCard(
             GitHub
           </AnimatedButton>
         </div>
-        
+
+        <p className="project-category">{project.category}</p>
+
+        <h3>{project.title}</h3>
+
+        <p>{project.description}</p>
+
+        <p className="project-stack">{project.stack}</p>
       </div>
 
       <figure className="project-media">

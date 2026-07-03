@@ -46,6 +46,11 @@
   .site-header {
     position: static;
     padding-block: 14px 0;
+    padding: 0.8rem 0.9rem;
+   
+  }
+nav.glass-nav {
+    padding: 0.1rem 0.2rem;
   }
 
   .site-nav {
@@ -76,12 +81,12 @@
 
   .intro-copy h1 {
     max-width: 220%;
-    font-size: clamp(2rem, 8vw, 2.1rem);
+    font-size: clamp(2.6em, 12vw, 2.8rem);
   }
 
   .intro-copy,
   .hero-visual {
-    max-width: 560px;
+    max-width: 760px;
   }
 
   .desktop-role {

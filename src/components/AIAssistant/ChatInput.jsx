@@ -60,14 +60,20 @@ export default function ChatInput({ onSend }) {
     setMessage("");
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSend();
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      e.preventDefault();
       handleSend();
     }
   };
 
   return (
-    <div className="chat-input-container">
+    <form className="chat-input-container" onSubmit={handleSubmit}>
       <input
         type="text"
         className="chat-input"
@@ -77,14 +83,9 @@ export default function ChatInput({ onSend }) {
         onKeyDown={handleKeyDown}
       />
 
-      <button
-        className="send-btn"
-        onClick={handleSend}
-        type="button"
-        aria-label="Send message"
-      >
+      <button className="send-btn" type="submit" aria-label="Send message">
         →
       </button>
-    </div>
+    </form>
   );
 }

@@ -5,6 +5,7 @@ import { revealItem, staggerContainer } from '../../utils/motion.js';
 
 export default function CredentialsSection() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(null);
   const featuredCertificate = profile.certificates[0];
 
   useEffect(() => {
@@ -70,9 +71,19 @@ export default function CredentialsSection() {
               <button type="button" onClick={() => setIsGalleryOpen(false)}>Close</button>
             </div>
             <div className="certificate-gallery-grid">
-              {profile.certificates.map((certificate) => (
-                <article className="certificate-gallery-item" key={certificate.title}>
-                  <img src={certificate.image} alt={certificate.alt} loading="lazy" />
+              {profile.certificates.map((certificate, index) => (
+                <article
+                  className={`certificate-gallery-item ${selectedCertificateIndex === index ? 'selected' : ''}`}
+                  key={certificate.title}
+                >
+                  <button
+                    type="button"
+                    className="certificate-gallery-image"
+                    aria-label={`View ${certificate.title}`}
+                    onClick={() => setSelectedCertificateIndex(selectedCertificateIndex === index ? null : index)}
+                  >
+                    <img src={certificate.image} alt={certificate.alt} loading="lazy" />
+                  </button>
                   <div>
                     <h4>{certificate.title}</h4>
                     <p>{certificate.description}</p>
@@ -83,13 +94,11 @@ export default function CredentialsSection() {
                 </article>
               ))}
             </div>
-         
           </div>
-          
         </div>
       )}
 
-      <div className="dashed-line"></div>
+      {/* <div className="dashed-line"></div> */}
     </section>
   );
 }

@@ -47,6 +47,20 @@ export const profile = {
       image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80',
       alt: 'Achievement certificate and notebook',
       driveUrl: 'https://drive.google.com/file/d/demo-certificate-two/view'
+    },
+    {
+      title: 'UI/UX Design Certificate',
+      description: 'Demo certificate entry for a user experience design course. Replace this image and text later.',
+      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
+      alt: 'Design certificate and tablet',
+      driveUrl: 'https://drive.google.com/file/d/demo-certificate-three/view'
+    },
+    {
+      title: 'Full Stack Development Award',
+      description: 'Demo certificate entry for a full-stack development achievement. Replace this with your real credential later.',
+      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+      alt: 'Award certificate on a desk',
+      driveUrl: 'https://drive.google.com/file/d/demo-certificate-four/view'
     }
   ],
   goals: [

@@ -1,11 +1,15 @@
 .content-section {
   padding-block: clamp(8px, 9vw, 90px);
+  border : 1px solid rgb(83, 81, 81);
+  border-radius:30px;
+  padding:22px;
+  margin-bottom: 30px;
 }
 
-#about {
-  /* border: 2px dotted orange; */
+/* #about {
+  
     border-top: 2px dashed #f97316;
-}
+} */
 
 .section-grid {
   display: grid;
@@ -24,7 +28,7 @@
 .prose-card,
 .skill-card,
 .info-card {
-  border: 1px solid var(--color-border-strong);
+  /* border: 16px solid orange; */
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-soft);
 }
@@ -67,7 +71,7 @@
 .skill-card h3 {
   margin: 0 0 12px;
   color: #fff;
-  font-size: 0.60rem;
+  font-size: 0.90rem;
   font-weight: 650;
   
 }

@@ -25,8 +25,11 @@ export default function Footer() {
         variants={fadeUp}
       >
         <div className="footer-main">
-          <p className="section-label">Contact</p>
+          <p className="section-label">Contact <span><a  href={`mailto:${profile.email}`}>
+            {profile.email}
+          </a></span></p>
           <h2>Thanks for visiting my portfolio.</h2>
+          <div className="footer-divider" aria-hidden="true" />
           <a className="email-pill" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
