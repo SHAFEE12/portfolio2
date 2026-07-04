@@ -156,20 +156,19 @@
 
 .robot-label {
   position: absolute;
-  left: 15px;
-  right: 0;
-  bottom: 0;
-  height: 25px;
-  /* background: #000000; */
+  left: 10px;
+  right: 0px;
+  bottom: -2px;
+  height: 28px; 
+ 
   z-index: 1201;
   pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  color:white;
-  background: #833AB4;
+  color:rgb(254, 254, 255);
+  background: #f29c56;
   
-
 /* background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 43%, rgba(214, 90, 32, 1) 80%, rgba(252, 176, 69, 1) 98%); */
   font-size: 0.72rem;
   font-weight: 600;

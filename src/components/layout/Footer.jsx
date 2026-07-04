@@ -25,18 +25,20 @@ export default function Footer() {
         variants={fadeUp}
       >
         <div className="footer-main">
-          <p className="section-label">Contact <span><a  href={`mailto:${profile.email}`}>
+          <p className="section-label">Contact <span><a className="email-pill" href={`mailto:${profile.email}`}>
             {profile.email}
           </a></span></p>
           <h2>Thanks for visiting my portfolio.</h2>
           <div className="footer-divider" aria-hidden="true" />
-          <a className="email-pill" href={`mailto:${profile.email}`}>
-            {profile.email}
-          </a>
+       {/* <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
+                 ummeedfoundationofindia.org</a>
+       <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
+                 ummeedfoundationofindia.org</a> */}
+
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 {profile.name}. Bihar, India.</p>
+          <p>&copy; 2026 {profile.name}</p>
           <nav aria-label="Footer navigation">
             {footerLinks.map((link) => (
               <a key={link.label} href={link.href}>

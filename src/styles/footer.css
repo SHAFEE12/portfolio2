@@ -39,21 +39,28 @@
   height: 60px;  
   padding: 20px;   
   margin-bottom:0;     
+   display: flex;
+    margin-bottom: 0;
+ gap:200px;
+    align-items: center;
+    justify-content: space-between; 
 
 
 }
 
 .footer-main .section-label span {
-  color:blue;
-  padding:30px;
+ 
+  padding:0px;
+   text-transform: lowercase;
+  
 }
 .footer-main h2 {
   width: 100%;
   margin-top: 0;
-  background: #212121;
-  padding: 45px;
+  /* background: #212121; */
+  padding: 25px;
   font-size: clamp(3rem, 4vw, 4.4rem);
-  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-top: 1px solid rgba(255, 255, 255, 0.36);
 }
 
 /* .footer-divider {
@@ -71,6 +78,11 @@
   color: white;
 animation: none;
   /* border: 1px solid rgba(255, 255, 255); */
+}
+
+.footer-main .project-links{
+  padding: 20px;
+  margin-top:104px;
 }
 
 .footer-bottom {
@@ -111,6 +123,33 @@ animation: none;
     width: 100%;
     margin-top: 18px;
   }
+
+.footer-main .section-label {
+  /* background: #212121; */
+  color: rgb(230, 102, 10);
+  border-right: 1px solid rgba(255, 255, 255, 0.36);
+  /* width: 130px;        
+  height: 60px;  
+  padding: 20px;    */
+   
+   display: flex;
+    margin-bottom: 0;
+ gap:20px;
+    align-items: center;
+    justify-content: space-between; 
+
+
+}
+
+.footer-main .section-label span {
+ 
+  padding:0px;
+   text-transform: lowercase;
+  font-size: 13px;
+  font-weight:200px;
+  background:none;
+  
+}
 
   .footer-bottom {
     display: flex;
