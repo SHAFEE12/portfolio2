@@ -68,9 +68,9 @@
   display: inline-block;
   font-family: 'Allura', cursive;
   color: #fb6900;
-  margin-left: 0.28em;
+  /* margin-left: 0.28em; */
   letter-spacing: 0.02em;
-  font-size: 1.25em;
+  font-size: 1.01em;
   font-weight: 700;
 }
 
