@@ -326,9 +326,9 @@ export default function AIAssistant({ open, onClose }) {
 
     if (isLeetcodeQuestion) {
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/leetcode"
-        );
+       const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/leetcode`
+);
 
         const result = await response.json();
 
@@ -402,8 +402,8 @@ I have solved ${profile.totalSolved} LeetCode problems.
 
         <div className="assistant-header">
           <div>
-            <h2>🤖 Shafee AI</h2>
-            <p>ONLINE</p>
+            <h2> Shafee AI</h2>
+            {/* <p>ONLINE</p> */}
           </div>
 
           <button
