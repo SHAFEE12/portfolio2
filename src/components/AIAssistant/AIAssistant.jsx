@@ -243,10 +243,11 @@
 //   );
 // }
 
+import { prepareHeroVideo } from "../../utils/videoController";
+import detectSecret from "../../utils/SecretDetector";
+import useEasterEgg from "../../hooks/useEasterEgg";
 
-
-
-
+import SuggestionChips from "./SuggestionChips";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -267,6 +268,7 @@ export default function AIAssistant({ open, onClose }) {
   ]);
 
   const [typing, setTyping] = useState(false);
+  const { startEasterEgg } = useEasterEgg();
 
   const messagesEndRef = useRef(null);
 
@@ -296,6 +298,41 @@ export default function AIAssistant({ open, onClose }) {
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
+
+
+
+console.log("Text =", text);
+console.log("detectSecret =", detectSecret(text));
+
+if (detectSecret(text)) {
+
+    console.log("🎬 Preparing Hero Video...");
+
+    await prepareHeroVideo();
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        sender: "user",
+        text,
+      },
+      {
+        sender: "bot",
+        text: "❤️ Access Granted...",
+      },
+    ]);
+
+    // Small cinematic delay
+    setTimeout(() => {
+
+        console.log("🚀 Starting Easter Egg");
+
+        startEasterEgg();
+
+    }, 800);
+
+    return;
+}
 
     const userMessage = {
       sender: "user",
@@ -396,7 +433,9 @@ I have solved ${profile.totalSolved} LeetCode problems.
   if (!open) return null;
 
   return (
-    <div className="assistant-overlay">
+    <div className="assistant-overlay ai-section">
+
+      
       <div className="assistant-window">
         {/* Header */}
 
@@ -432,7 +471,14 @@ I have solved ${profile.totalSolved} LeetCode problems.
         {/* Footer */}
 
         <div className="assistant-footer">
-          <ChatInput onSend={handleSend} />
+          {/* <ChatInput onSend={handleSend} /> */}
+          <SuggestionChips
+    onSelect={handleSend}
+/>
+
+<ChatInput
+    onSend={handleSend}
+/>
         </div>
       </div>
     </div>

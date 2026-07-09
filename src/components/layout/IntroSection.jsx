@@ -1,8 +1,14 @@
-﻿import { useEffect, useState } from 'react';
+﻿import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { fadeUp } from '../../utils/motion.js';
 import profileImage from '../../assets/shafee.png';
+import { registerHeroVideo } from "../../utils/videoController";
+
+import useEasterEgg from "../../hooks/useEasterEgg";
+import secretVideo from "../../assets/videos/secret.mp4";
+
+import { reverseTimeline } from "../../animations/easterEggTimeline";
 
 const resumeUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/view?usp=sharing';
 const resumePreviewUrl = 'https://drive.google.com/file/d/18nMOv8Rd8j-XRghDTa5eWjQa_AUjBhUi/preview';
@@ -19,6 +25,21 @@ function OpenIcon() {
 }
 
 export default function IntroSection() {
+
+  const handleVideoEnd = () => {
+
+  reverseTimeline();
+
+  setTimeout(() => {
+
+    stopEasterEgg();
+
+  }, 1200);
+
+};
+
+    const { isActive, stopEasterEgg } = useEasterEgg();
+    const videoRef = useRef(null);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
@@ -30,9 +51,23 @@ export default function IntroSection() {
       }
     };
 
+   
+
+
+
+
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isResumeOpen]);
+
+
+
+  useEffect(() => {
+    if (videoRef.current) {
+        registerHeroVideo(videoRef.current);
+        console.log("✅ Hero Video Registered");
+    }
+}, []);
 
   return (
     <section className="intro-section container" id="top" aria-labelledby="intro-title">
@@ -68,18 +103,43 @@ export default function IntroSection() {
         </div>
 
         <div className="hero-visual" aria-label="Portfolio summary">
-          <figure className="hero-image">
-            {/* <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
-              alt="Development workspace with laptop and code"
-              loading="lazy"
-            /> */}
+           {/* <figure className="hero-image">
+           
             <img
               src={profileImage}
               alt="Shafee Ahmad"
               loading="lazy"
             />
-          </figure>
+          </figure>  */}
+
+            
+          <figure className="hero-image">
+
+  <img
+    src={profileImage}
+    alt="Shafee Ahmad"
+    loading="lazy"
+    className={`hero-photo ${isActive ? "hero-hidden" : ""}`}
+  />
+
+
+  
+  <video
+  ref={videoRef}
+  className={`hero-secret-video ${isActive ? "hero-video-show" : ""}`}
+  playsInline
+  preload="auto"
+  onEnded={handleVideoEnd}
+>
+  
+
+    <source
+      src={secretVideo}
+      type="video/mp4"
+    />
+  </video>
+
+</figure>
           <div className="hero-stat hero-stat-one">
              <span>MERN + DSA</span> 
             {/* <strong>MERN + DSA</strong> */}

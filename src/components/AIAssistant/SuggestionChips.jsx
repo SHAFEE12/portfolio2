@@ -28,16 +28,101 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// import "./SuggestionChip.css";
+
+// const suggestions = [
+//   "About",
+//   "Skills",
+//   "Projects",
+//   "Experience",
+//   "Education",
+//   "Resume",
+//   "Contact",
+// ];
+
+
+// // const suggestions = [
+
+// //     {
+// //         label:"💻 Skills",
+// //         value:"skills"
+// //     },
+
+// //     {
+// //         label:"🚀 Projects",
+// //         value:"projects"
+// //     },
+
+// //     {
+// //         label:"📚 DSA",
+// //         value:"leetcode"
+// //     },
+
+// //     {
+// //         label:"❤️ GF",
+// //         value:"gf"
+// //     }
+
+// // ];
+
+// export default function SuggestionChip({ onSelect }) {
+//   return (
+//     <div className="suggestion-container">
+//       {suggestions.map((item) => (
+//         <button
+//           key={item}
+//           className="suggestion-chip"
+//           onClick={() => onSelect(item)}
+//         >
+//           {item}
+//         </button>
+// //         <button
+
+// // onClick={()=>onSelect(item.value)}
+
+// // >
+
+// // {item.label}
+
+// // </button>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
 import "./SuggestionChip.css";
 
 const suggestions = [
-  "About",
-  "Skills",
-  "Projects",
-  "Experience",
-  "Education",
-  "Resume",
-  "Contact",
+  { label: "About", value: "about" },
+  { label: "Skills", value: "skills" },
+  { label: "Projects", value: "projects" },
+  { label: "Experience", value: "experience" },
+  { label: "Education", value: "education" },
+  { label: "Resume", value: "resume" },
+  { label: "Contact", value: "contact" },
+  { label: "GF", value: "gf" },
+  { label: "DSA", value: "leetcode" },
+  
+
 ];
 
 export default function SuggestionChip({ onSelect }) {
@@ -45,11 +130,11 @@ export default function SuggestionChip({ onSelect }) {
     <div className="suggestion-container">
       {suggestions.map((item) => (
         <button
-          key={item}
+          key={item.value}
           className="suggestion-chip"
-          onClick={() => onSelect(item)}
+          onClick={() => onSelect(item.value)}
         >
-          {item}
+          {item.label}
         </button>
       ))}
     </div>

@@ -157,6 +157,13 @@ LinkedIn
 linkedin.com/in/yourprofile
 
 Feel free to connect with me!`,
+
+  },
+
+
+   gf: {
+    keywords: ["gf"],
+    answer: "❤️ Access Granted...",
   },
 
   resume: {

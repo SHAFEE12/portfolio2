@@ -45,6 +45,80 @@
 // export default ChatInput;
 
 
+// import detectSecret from "../../utils/SecretDetector";
+// import useEasterEgg from "../../hooks/useEasterEgg";
+
+// import "./ChatInput.css";
+// import { useState } from "react";
+
+// export default function ChatInput({ onSend }) {
+//   const [message, setMessage] = useState("");
+
+//   const handleSend = () => {
+//     const text = message.trim();
+
+//     if (!text) return;
+
+
+
+//     onSend(text);
+//     setMessage("");
+ 
+
+// if (detectSecret(message)) {
+
+//     startEasterEgg();
+
+//     return;
+
+//     if(detectSecret(message)){
+
+//     console.log("Secret Activated");
+
+//     startEasterEgg();
+
+//     return;
+// }
+// }
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     handleSend();
+//   };
+
+//   const handleKeyDown = (e) => {
+//     if (e.key === "Enter") {
+//       e.preventDefault();
+//       handleSend();
+//     }
+//   };
+
+//   return (
+//     <form className="chat-input-container" onSubmit={handleSubmit}>
+//       <input
+//         type="text"
+//         className="chat-input"
+//         placeholder="Ask me anything..."
+//         value={message}
+//         onChange={(e) => setMessage(e.target.value)}
+//         onKeyDown={handleKeyDown}
+//       />
+
+//       <button className="send-btn" type="submit" aria-label="Send message">
+//         →
+//       </button>
+//     </form>
+//   );
+// }
+
+
+
+
+
+
+
+import { prepareHeroVideo } from "../../utils/videoController";
 import "./ChatInput.css";
 import { useState } from "react";
 
@@ -57,6 +131,7 @@ export default function ChatInput({ onSend }) {
     if (!text) return;
 
     onSend(text);
+
     setMessage("");
   };
 
@@ -73,7 +148,10 @@ export default function ChatInput({ onSend }) {
   };
 
   return (
-    <form className="chat-input-container" onSubmit={handleSubmit}>
+    <form
+      className="chat-input-container"
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         className="chat-input"
@@ -83,7 +161,10 @@ export default function ChatInput({ onSend }) {
         onKeyDown={handleKeyDown}
       />
 
-      <button className="send-btn" type="submit" aria-label="Send message">
+      <button
+        className="send-btn"
+        type="submit"
+      >
         →
       </button>
     </form>
