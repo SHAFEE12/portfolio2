@@ -8,9 +8,19 @@ import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
+// app.use(
+//   cors({
+//     origin: FRONTEND_URL,
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: [
+      "https://shafee.in",
+      "https://www.shafee.in",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
