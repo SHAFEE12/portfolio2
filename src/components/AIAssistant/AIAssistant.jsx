@@ -273,6 +273,16 @@ export default function AIAssistant({ open, onClose }) {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
+  if (!localStorage.getItem("sessionId")) {
+    const id =
+      Date.now().toString() +
+      Math.random().toString(36).substring(2);
+
+    localStorage.setItem("sessionId", id);
+  }
+}, []);
+
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
       behavior: "smooth",
     });
@@ -334,14 +344,45 @@ if (detectSecret(text)) {
     return;
 }
 
-    const userMessage = {
-      sender: "user",
-      text,
-    };
+    // const userMessage = {
+    //   sender: "user",
+    //   text,
+    // };
 
-    setMessages((prev) => [...prev, userMessage]);
+    // setMessages((prev) => [...prev, userMessage]);
 
-    setTyping(true);
+    // setTyping(true);
+
+const userMessage = {
+  sender: "user",
+  text,
+};
+
+setMessages((prev) => [...prev, userMessage]);
+
+// Save visitor message to backend
+try {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: text,
+      sessionId: localStorage.getItem("sessionId"),
+      browser: navigator.userAgent,
+      device: /Mobi|Android/i.test(navigator.userAgent)
+        ? "Mobile"
+        : "Desktop",
+      page: window.location.pathname,
+    }),
+  });
+} catch (error) {
+  console.error("Failed to save visitor message:", error);
+}
+
+setTyping(true);
+
 
     const input = text.toLowerCase();
 

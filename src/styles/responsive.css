@@ -69,11 +69,11 @@ nav.glass-nav {
   }
 
   .intro-section {
-    padding-block: 16px 54px;
+    padding-block: 16px 12px;
   }
 
   .intro-panel {
-      margin-top:100px;
+      margin-top:70px;
     min-height: auto;
     padding: 26px;
     border-radius: 22px;

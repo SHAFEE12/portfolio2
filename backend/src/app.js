@@ -4,10 +4,16 @@ import cors from "cors";
 import { FRONTEND_URL } from "./config/env.js";
 
 import leetcodeRoutes from "./routes/leetcodeRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: FRONTEND_URL,
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,6 +26,10 @@ app.get("/", (req, res) => {
   });
 });
 
+// Existing API
 app.use("/api/leetcode", leetcodeRoutes);
+
+// New Chat API
+app.use("/api/chat", chatRoutes);
 
 export default app;
