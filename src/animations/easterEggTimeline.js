@@ -127,14 +127,63 @@ export function startEasterEggTimeline() {
 // Scroll To Hero
 //-------------------------------------------------
 
+for (
+  let i = currentIndex;
+  i < sectionOrder.length;
+  i++
+) {
+    collapseSection(sectionOrder[i]);
+}
+
+timeline.to({}, {
+    duration: 0.4,
+});
+
 timeline.to(window, {
-  duration: 1.4,
+  duration: 1,
   scrollTo: {
     y: ".intro-section",
     offsetY: 0,
   },
-  ease: "power2.inOut",
+  ease: "expo.inOut",
 });
+
+
+
+function collapseSection(selector) {
+
+    timeline.to(selector,{
+        opacity:0,
+        y:80,
+        scale:.95,
+        duration:.55,
+    });
+
+    timeline.to({},{
+        duration:.08
+    });
+
+}
+
+
+
+
+
+
+
+// timeline.to({}, { duration: 0.5 });
+
+// timeline.to(window, {
+//   duration: 3,
+//   scrollTo: {
+//     y: ".intro-section",
+//     autoKill: false,
+//   },
+//   ease: "expo.inOut",
+// });
+
+
+
 
 //-------------------------------------------------
 // Hero Zoom
@@ -143,7 +192,7 @@ timeline.to(window, {
 timeline.to(".hero-image", {
     scale: 1.12,
     duration: 1,
-    ease: "power2.inOut",
+    // ease: "power2.inOut",
 });
 
 //-------------------------------------------------
@@ -242,6 +291,30 @@ export function reverseTimeline() {
   if (!timeline) return;
 
   timeline.eventCallback("onReverseComplete", () => {
+ 
+
+      const video = document.querySelector(".hero-secret-video");
+
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    gsap.set([
+        ".header-section",
+        ".about-section",
+        ".skills-section",
+        ".portfolio-section",
+        ".credentials-section",
+        ".footer-section",
+        ".assistant-window",
+        ".hero-image",
+        ".hero-photo",
+        ".hero-secret-video"
+    ], {
+        clearProps: "all"
+    });
+
 
     timeline.kill();
 

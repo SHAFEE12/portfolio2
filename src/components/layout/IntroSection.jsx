@@ -80,7 +80,7 @@ export default function IntroSection() {
         <div className="intro-copy">
           {/* <p className="section-label">{profile.location}</p> */}
           <h1 id="intro-title">
-            Shafee<span className="intro-name-suffix">'s</span>{' '}
+            Shafee's
             <span className="intro-name-portfolio">Portfolio</span>
           </h1>
           <p className="hero-role">

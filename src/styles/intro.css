@@ -59,13 +59,13 @@
 }
 
 .intro-name-suffix {
-  display: inline-block;
+  /* display: inline-block; */
   margin-left: 0.24em;
   color: inherit;
 }
 
 .intro-name-portfolio {
-  display: inline-block;
+  /* display: inline-block; */
   font-family: 'Allura', cursive;
   color: #fb6900;
   /* margin-left: 0.28em; */
@@ -400,4 +400,44 @@
     opacity:1;
 
     z-index:3;
+}
+
+
+
+
+
+
+
+
+/* #intro-title {
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+} */
+
+/* .intro-name-portfolio {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  color: #00bfff;
+} */
+
+
+
+
+#intro-title {
+  font-size: clamp(1rem, 5vw, 5rem);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;      /* Prevent line break */
+  overflow: hidden;         /* Optional */
+  text-overflow: ellipsis;  /* Optional */
+}
+
+.intro-name-portfolio {
+  color: #00bfff;
 }

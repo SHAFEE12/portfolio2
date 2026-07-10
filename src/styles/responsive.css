@@ -25,6 +25,7 @@
 
   .hero-visual {
     min-height: 360px;
+    margin-top: 16px;
   }
 
   .skill-grid {
@@ -47,6 +48,7 @@
     position: static;
     padding-block: 14px 0;
     padding: 0.8rem 0.9rem;
+     height: 80px;
    
   }
 nav.glass-nav {
@@ -183,6 +185,20 @@ nav.glass-nav {
   .social-links {
     flex-wrap: wrap;
   }
+
+
+  #intro-title {
+  font-size: clamp(2.5rem, 8vw, 15rem);
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;      /* Prevent line break */
+  overflow: hidden;         /* Optional */
+  text-overflow: ellipsis;  /* Optional */
+}
+
+.intro-name-portfolio {
+  color: #00bfff;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
