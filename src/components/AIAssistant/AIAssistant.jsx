@@ -306,6 +306,31 @@ export default function AIAssistant({ open, onClose }) {
     return defaultResponse;
   };
 
+
+// add 
+
+  async function saveVisitorMessage(text) {
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        message: text,
+        sessionId: localStorage.getItem("sessionId"),
+        browser: navigator.userAgent,
+        device: /Mobi|Android/i.test(navigator.userAgent)
+          ? "Mobile"
+          : "Desktop",
+        page: window.location.pathname,
+      }),
+    });
+  } catch (error) {
+    console.error("Failed to save visitor message:", error);
+  }
+}
+
   const handleSend = async (text) => {
     if (!text.trim()) return;
 
@@ -320,6 +345,8 @@ if (detectSecret(text)) {
 
     await prepareHeroVideo();
 
+    await saveVisitorMessage(text);
+
     setMessages((prev) => [
       ...prev,
       {
@@ -332,6 +359,8 @@ if (detectSecret(text)) {
       },
     ]);
 
+
+   
     // Small cinematic delay
     setTimeout(() => {
 
@@ -361,25 +390,26 @@ const userMessage = {
 setMessages((prev) => [...prev, userMessage]);
 
 // Save visitor message to backend
-try {
-  await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      message: text,
-      sessionId: localStorage.getItem("sessionId"),
-      browser: navigator.userAgent,
-      device: /Mobi|Android/i.test(navigator.userAgent)
-        ? "Mobile"
-        : "Desktop",
-      page: window.location.pathname,
-    }),
-  });
-} catch (error) {
-  console.error("Failed to save visitor message:", error);
-}
+// try {
+//   await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       message: text,
+//       sessionId: localStorage.getItem("sessionId"),
+//       browser: navigator.userAgent,
+//       device: /Mobi|Android/i.test(navigator.userAgent)
+//         ? "Mobile"
+//         : "Desktop",
+//       page: window.location.pathname,
+//     }),
+//   });
+// } catch (error) {
+//   console.error("Failed to save visitor message:", error);
+// }
+ await saveVisitorMessage(text);
 
 setTyping(true);
 
