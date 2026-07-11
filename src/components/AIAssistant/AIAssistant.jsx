@@ -410,28 +410,87 @@ setTyping(true);
 
         const result = await response.json();
 
-        if (result.success) {
-          const profile = result.data;
+//         if (result.success) {
+//           const profile = result.data;
 
-          const botMessage = {
-            sender: "bot",
-            text: `✅ Yes!
+//           const botMessage = {
+//             sender: "bot",
+//             text: `✅ Yes!
 
-I have solved ${profile.totalSolved} LeetCode problems.
+// I have solved ${profile.totalSolved} LeetCode problems.
 
-🟢 Easy : ${profile.easy}
+// 🟢 Easy : ${profile.easy}
 
-🟠 Medium : ${profile.medium}
+// 🟠 Medium : ${profile.medium}
 
-🔴 Hard : ${profile.hard}
+// 🔴 Hard : ${profile.hard}
 
-🏆 Ranking : ${profile.ranking}
+// 🏆 Ranking : ${profile.ranking}
 
-🔗 ${profile.profile}`,
-          };
+// 🔗 ${profile.profile}`,
+//           };
 
-          setMessages((prev) => [...prev, botMessage]);
-        } else {
+//           setMessages((prev) => [...prev, botMessage]);
+
+//         } 
+        
+
+if (result.success) {
+  const profile = result.data;
+
+  let message = "";
+
+  // -----------------------------
+  // Today's solved problems
+  // -----------------------------
+  if (profile.today.solved) {
+    message += `✅ I solved ${profile.today.count} problem${
+      profile.today.count > 1 ? "s" : ""
+    } today.\n\n`;
+
+    profile.today.questions.forEach((q, index) => {
+      message += `${index + 1}. 🟢 ${q.title}\n`;
+      message += `https://leetcode.com/problems/${q.titleSlug}/\n\n`;
+    });
+  } else {
+    message += `❌ I haven't solved any LeetCode problem today.\n\n`;
+
+    message += `📌 Recent solved problems:\n\n`;
+
+    profile.recentSolved.forEach((q, index) => {
+      message += `${index + 1}. ${q.title}\n`;
+      message += `📅 ${q.relativeTime}\n`;
+      message += `https://leetcode.com/problems/${q.titleSlug}/\n\n`;
+    });
+  }
+
+  message +=
+    "━━━━━━━━━━━━━━━━━━━━━━\n\n";
+
+  message += `📊 Overall Profile\n\n`;
+
+  message += `✅ Total Solved : ${profile.totalSolved}\n\n`;
+
+  message += `🟢 Easy : ${profile.easy}\n`;
+
+  message += `🟠 Medium : ${profile.medium}\n`;
+
+  message += `🔴 Hard : ${profile.hard}\n\n`;
+
+  message += `🏆 Ranking : ${profile.ranking}\n\n`;
+
+  message += `${profile.profile}`;
+
+  setMessages((prev) => [
+    ...prev,
+    {
+      sender: "bot",
+      text: message,
+    },
+  ]);
+}
+        
+        else {
           setMessages((prev) => [
             ...prev,
             {
