@@ -345,7 +345,7 @@ if (detectSecret(text)) {
 
     await prepareHeroVideo();
 
-    await saveVisitorMessage(text);
+    // await saveVisitorMessage(text);
 
     setMessages((prev) => [
       ...prev,
@@ -409,7 +409,8 @@ setMessages((prev) => [...prev, userMessage]);
 // } catch (error) {
 //   console.error("Failed to save visitor message:", error);
 // }
- await saveVisitorMessage(text);
+//  await saveVisitorMessage(text);
+ saveVisitorMessage(text);
 
 setTyping(true);
 

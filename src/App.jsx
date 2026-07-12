@@ -134,6 +134,18 @@ export default function App() {
 
 useEffect(() => {
 
+  console.log("🔥 Warming Backend...");
+
+  fetch(`${import.meta.env.VITE_API_URL}/api/health`)
+    .catch(() => {});
+
+  fetch(`${import.meta.env.VITE_API_URL}/api/leetcode`)
+    .catch(() => {});
+
+}, []);
+
+useEffect(() => {
+
     if(!isActive) return;
 
     console.log("🎬 Starting Master Timeline");
