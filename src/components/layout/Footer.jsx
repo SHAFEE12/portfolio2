@@ -66,8 +66,8 @@ export default function Footer() {
           </a></span></p>
           <h2>Thanks for visiting my portfolio.</h2>
           <div className="footer-divider" aria-hidden="true" />
-        <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
-                 ummeedfoundationofindia.org</a>
+        {/* <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
+                 ummeedfoundationofindia.org</a> */}
        {/* <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
                  ummeedfoundationofindia.org</a>  */}
 

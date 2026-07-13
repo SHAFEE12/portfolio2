@@ -164,9 +164,15 @@ export default function ChatInput({ onSend }) {
       <button
         className="send-btn"
         type="submit"
+        aria-label="Send message"
       >
-        →
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 12 20 4l-4.5 16-3.2-6.3L4 12Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+          <path d="m12.3 13.7 3.2-3.2" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+        </svg>
       </button>
     </form>
   );
 }
+
+
