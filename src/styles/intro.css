@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=Dancing+Script:wght@400..700&family=Limelight&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap');
 
 .intro-section {
-  padding-block: 38px clamp(60px, 8vw, 96px);
+  padding-block: 38px clamp(15px, 1vw, 96px);
   
 }
 
@@ -15,9 +15,9 @@
   padding: clamp(4px, 4vw, 26px);
   overflow: hidden; 
   background: transparent;
-  border: 1px solid rgb(86, 84, 84);
- margin-top: 100px;
-  
+  /* border: 1px solid rgb(86, 84, 84); */
+ /* margin-top: 100px;
+   */
    border-radius: clamp(24px, 4vw, 34px); 
   box-shadow: var(--shadow-soft);
   min-width: 0;
@@ -430,7 +430,7 @@
 
 
 #intro-title {
-  font-size: clamp(1rem, 5vw, 5rem);
+  font-size: clamp(1rem, 7vw, 6rem);
   font-weight: 700;
   text-align: center;
   white-space: nowrap;      /* Prevent line break */
@@ -440,4 +440,59 @@
 
 .intro-name-portfolio {
   color: #00bfff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.intro-section {
+  position: relative;
+  /* width: 100%;
+  min-height: 100vh;
+  overflow: hidden; */
+  background: linear-gradient(to top, #0b0b0b, #111);
+}
+
+/* Grid */
+.intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  /* Fade like the screenshot */
+  mask-image: radial-gradient(
+    ellipse 65% 50% at 50% 0%,
+    #000 70%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 65% 50% at 50% 0%,
+    #000 70%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+/* Noise */
+.intro-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/noise.gif");
+  opacity: 0.05;
+  pointer-events: none;
 }
