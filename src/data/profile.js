@@ -1,6 +1,6 @@
 import oracle from "../assets/OracleCertificate.jpg";
 import javaCertificate from "../assets/javaTraining.jpg";
-import internPE from "../assets/internPE.jpg";
+import internPE from "../assets/InternPE.jpg";
 
 export const profile = {
   name: 'Shafee Ahmad',
