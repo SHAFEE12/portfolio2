@@ -223,7 +223,7 @@ body{
   .mobile-nav {
     position: fixed;
     top: 82px;
-    left: 1rem;
+    left: 18rem;
     right: 1rem;
     z-index: 99;
     display: block;

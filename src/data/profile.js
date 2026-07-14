@@ -6,7 +6,7 @@ export const profile = {
   name: 'Shafee Ahmad',
   role: 'Full Stack Stack Developer | Problem Solver (DSA) ',
   // location: 'Bihar, India',
-  email: 'shafeeahmad322@gmail.com',
+  email: 'shafeeahmad.dev@gmail.com',
   github: 'https://github.com/shafee12',
   linkedin: 'https://linkedin.com/in/yourprofile',
   about: [

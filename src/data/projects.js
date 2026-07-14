@@ -40,16 +40,16 @@ export const projects = [
     alt: 'Modern online shopping interface shown on a laptop',
     githubUrl: 'https://nextflixindia.netlify.app/'
   },
-  {
-    id: 'certificate-gallery',
-    title: 'Certificate Gallery',
-    category: 'Portfolio Project',
-    description:
-      'A premium glassmorphism-inspired certificate showcase designed to organize and display achievements with elegant animations and responsive layouts.',
-    stack: 'React, CSS, Framer Motion',
-    image:
-      'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=85',
-    alt: 'Certificates and learning materials arranged on a desk',
-    githubUrl: 'https://github.com/your-username/certificate-gallery'
-  }
+  // {
+  //   id: 'certificate-gallery',
+  //   title: 'Certificate Gallery',
+  //   category: 'Portfolio Project',
+  //   description:
+  //     'A premium glassmorphism-inspired certificate showcase designed to organize and display achievements with elegant animations and responsive layouts.',
+  //   stack: 'React, CSS, Framer Motion',
+  //   image:
+  //     'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=85',
+  //   alt: 'Certificates and learning materials arranged on a desk',
+  //   githubUrl: 'https://github.com/your-username/certificate-gallery'
+  // }
 ];
