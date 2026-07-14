@@ -38,6 +38,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0;
+  padding-left:10px;
 }
 
 .intro-copy h1,
@@ -91,7 +92,8 @@
 .hero-summary {
   max-width: 590px;
   margin: 22px 0 0;
-  color: var(--color-muted);
+  /* color: var(--color-muted); */
+  color: #e1d7cc;
   font-size: clamp(1rem, 1.4vw, 1.18rem);
   overflow-wrap: anywhere;
 }
@@ -200,6 +202,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color:rgb(245, 113, 6);
+  padding-left:20px;
 }
 
 .hero-stat strong {
@@ -409,22 +412,6 @@
 
 
 
-/* #intro-title {
-  font-size: clamp(2rem, 7vw, 6rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2em;
-} */
-
-/* .intro-name-portfolio {
-  font-size: clamp(2.5rem, 8vw, 7rem);
-  color: #00bfff;
-} */
 
 
 
@@ -433,22 +420,14 @@
   font-size: clamp(1rem, 7vw, 6rem);
   font-weight: 700;
   text-align: center;
-  white-space: nowrap;      /* Prevent line break */
-  overflow: hidden;         /* Optional */
-  text-overflow: ellipsis;  /* Optional */
+  white-space: nowrap;   
+  overflow: hidden;         
+  text-overflow: ellipsis;  
 }
 
 .intro-name-portfolio {
   color: #00bfff;
 }
-
-
-
-
-
-
-
-
 
 
 

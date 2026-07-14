@@ -88,9 +88,8 @@ export default function IntroSection() {
             <span className="mobile-role">Full Stack Developer | DSA | B.Tech CSE</span>
           </p>
           <p className="hero-summary">
-            Computer Science Engineering student building modern MERN applications,
-            practicing DSA, and shaping useful web products with calm, responsive
-            interfaces.
+            Full-Stack Developer | MERN Stack | AI-Powered Web Products | React, Node.js, Express.js & MongoDB | JavaScript, Java & C++ | REST APIs | System Design | Data Structures & Algorithms | Product Engineering
+
           </p>
           <div className="hero-actions">
             <button className="primary-link" type="button" onClick={() => setIsResumeOpen(true)}>

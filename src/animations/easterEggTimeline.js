@@ -189,11 +189,11 @@ function collapseSection(selector) {
 // Hero Zoom
 //-------------------------------------------------
 
-timeline.to(".hero-image", {
-    scale: 1.12,
-    duration: 1,
-    // ease: "power2.inOut",
-});
+// timeline.to(".hero-image", {
+//     scale: 1.12,
+//     duration: 1,
+//     // ease: "power2.inOut",
+// });
 
 //-------------------------------------------------
 // Hero Photo Fade

@@ -46,7 +46,8 @@ export default function CredentialsSection() {
               <img src={featuredCertificate.image} alt={featuredCertificate.alt} loading="lazy" />
               <span>
                 <strong>{featuredCertificate.title}</strong>
-                <small>{featuredCertificate.description}</small>
+                {/* <small>{featuredCertificate.description}</small> */}
+                <p>click to preview</p>
               </span>
             </button>
           </motion.article>

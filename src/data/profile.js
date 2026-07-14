@@ -1,3 +1,7 @@
+import oracle from "../assets/oracleCertificate.jpg";
+import javaCertificate from "../assets/javaTraining.jpg";
+import internPE from "../assets/internPE.jpg";
+
 export const profile = {
   name: 'Shafee Ahmad',
   role: 'Full Stack Stack Developer | Problem Solver (DSA) ',
@@ -37,31 +41,31 @@ export const profile = {
     {
       title: 'Oracle Cloud Infrastructure AI Foundations Associate',
       description: 'Demo certificate entry for an AI foundations credential. Replace this text, image, and Drive link with the real certificate later.',
-      image: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80',
+      image: oracle,
       alt: 'Certificate document on a desk',
       driveUrl: 'https://drive.google.com/file/d/demo-certificate-one/view'
     },
     {
       title: 'IBM SkillsBuild AI Internship',
       description: 'Demo certificate entry for internship completion and learning achievements. Replace this with your real certificate details.',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80',
+      image: javaCertificate,
       alt: 'Achievement certificate and notebook',
       driveUrl: 'https://drive.google.com/file/d/demo-certificate-two/view'
     },
     {
       title: 'UI/UX Design Certificate',
       description: 'Demo certificate entry for a user experience design course. Replace this image and text later.',
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
+      image: internPE,
       alt: 'Design certificate and tablet',
       driveUrl: 'https://drive.google.com/file/d/demo-certificate-three/view'
     },
-    {
-      title: 'Full Stack Development Award',
-      description: 'Demo certificate entry for a full-stack development achievement. Replace this with your real credential later.',
-      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
-      alt: 'Award certificate on a desk',
-      driveUrl: 'https://drive.google.com/file/d/demo-certificate-four/view'
-    }
+    // {
+    //   title: 'Full Stack Development Award',
+    //   description: 'Demo certificate entry for a full-stack development achievement. Replace this with your real credential later.',
+    //   image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+    //   alt: 'Award certificate on a desk',
+    //   driveUrl: 'https://drive.google.com/file/d/demo-certificate-four/view'
+    // }
   ],
   goals: [
     'Become a skilled MERN Stack Developer',

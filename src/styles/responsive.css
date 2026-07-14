@@ -131,7 +131,7 @@ nav.glass-nav {
 
   .hero-stat {
     width: 178px;
-    padding: 14px;
+    padding: 6px;
   }
 
   .hero-stat-one {
@@ -145,7 +145,7 @@ nav.glass-nav {
   }
 
   .content-section {
-    padding-block: 24px;
+    padding-block: 16px;
   }
 
   .section-grid h2,
