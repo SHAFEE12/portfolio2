@@ -1,4 +1,4 @@
-import oracle from "../assets/oracleCertificate.jpg";
+import oracle from "../assets/OracleCertificate.jpg";
 import javaCertificate from "../assets/javaTraining.jpg";
 import internPE from "../assets/internPE.jpg";
 
