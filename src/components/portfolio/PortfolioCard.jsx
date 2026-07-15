@@ -15,7 +15,7 @@ const PortfolioCard = forwardRef(function PortfolioCard(
     >
       <div className="project-content">
         <div className="project-actions">
-          <AnimatedButton href={project.image}>
+          <AnimatedButton href={project.link}>
             live
           </AnimatedButton>
           <AnimatedButton href={project.githubUrl}>

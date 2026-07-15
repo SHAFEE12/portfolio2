@@ -15,7 +15,7 @@ let timeline = null;
 // ======================================================
 
 const sectionOrder = [
-  ".header-section",
+  ".header-section",                                           
   ".about-section",
   ".skills-section",
   ".portfolio-section",

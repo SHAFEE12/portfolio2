@@ -18,7 +18,7 @@ export default function AnimatedButton({ href, children = 'View Project' }) {
       <span className="button-text-mask" aria-hidden="true">
         <span className="button-text-track">
           <span>{children}</span>
-          <span>{children}</span>
+          {/* <span>{children}</span> */}
         </span>
       </span>
       <span className="sr-only">{children}</span>

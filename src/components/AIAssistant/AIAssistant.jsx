@@ -20,7 +20,7 @@ export default function AIAssistant({ open, onClose }) {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "👋 Hello Commander.\n\nI'm Shafee AI.\nAsk me anything about me.",
+      text: "👋 Heyy..\nAsk me anything about me.",
     },
   ]);
 
@@ -98,7 +98,7 @@ console.log("detectSecret =", detectSecret(text));
 
 if (detectSecret(text)) {
 
-    console.log("🎬 Preparing Hero Video...");
+  
 
     await prepareHeroVideo();
 
@@ -112,7 +112,7 @@ if (detectSecret(text)) {
       },
       {
         sender: "bot",
-        text: "❤️ Access Granted...",
+        text: "❤️",
       },
     ]);
 
@@ -130,14 +130,7 @@ if (detectSecret(text)) {
     return;
 }
 
-    // const userMessage = {
-    //   sender: "user",
-    //   text,
-    // };
-
-    // setMessages((prev) => [...prev, userMessage]);
-
-    // setTyping(true);
+  
 
 const userMessage = {
   sender: "user",
@@ -146,27 +139,7 @@ const userMessage = {
 
 setMessages((prev) => [...prev, userMessage]);
 
-// Save visitor message to backend
-// try {
-//   await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       message: text,
-//       sessionId: localStorage.getItem("sessionId"),
-//       browser: navigator.userAgent,
-//       device: /Mobi|Android/i.test(navigator.userAgent)
-//         ? "Mobile"
-//         : "Desktop",
-//       page: window.location.pathname,
-//     }),
-//   });
-// } catch (error) {
-//   console.error("Failed to save visitor message:", error);
-// }
-//  await saveVisitorMessage(text);
+
  saveVisitorMessage(text);
 
 setTyping(true);
@@ -198,29 +171,7 @@ setTyping(true);
 
         const result = await response.json();
 
-//         if (result.success) {
-//           const profile = result.data;
 
-//           const botMessage = {
-//             sender: "bot",
-//             text: `✅ Yes!
-
-// I have solved ${profile.totalSolved} LeetCode problems.
-
-// 🟢 Easy : ${profile.easy}
-
-// 🟠 Medium : ${profile.medium}
-
-// 🔴 Hard : ${profile.hard}
-
-// 🏆 Ranking : ${profile.ranking}
-
-// 🔗 ${profile.profile}`,
-//           };
-
-//           setMessages((prev) => [...prev, botMessage]);
-
-//         } 
         
 
 if (result.success) {
@@ -283,7 +234,7 @@ if (result.success) {
             ...prev,
             {
               sender: "bot",
-              text: "❌ Unable to fetch LeetCode profile.",
+              text: "❌ Unable to fetch LeetCode profile. sorryyy for inconvenience",
             },
           ]);
         }
@@ -295,7 +246,7 @@ if (result.success) {
           {
             sender: "bot",
             text:
-              "⚠️ Unable to connect to backend.\n\nMake sure your backend is running.",
+              "⚠️ Unable to connect to backend. sorryyy for inconvenience",
           },
         ]);
       }

@@ -3,7 +3,6 @@ import useEasterEgg from "../../hooks/useEasterEgg";
 
 import "./EasterEgg.css";
 
-// import secretVideo from "../../assets/videos/secret.mp4";
 import secretVideo from "../../assets/videos/secret.mp4";
 export default function EasterEggOverlay() {
   const { isActive, stopEasterEgg } = useEasterEgg();

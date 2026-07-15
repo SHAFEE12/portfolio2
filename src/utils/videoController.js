@@ -11,7 +11,6 @@ export function prepareHeroVideo() {
   heroVideo.muted = false;
   heroVideo.volume = 1;
 
-  console.log("✅ Hero Video Ready");
 }
 
 export async function playHeroVideo() {

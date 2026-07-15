@@ -10,11 +10,12 @@ export const projects = [
     title: 'Attendance Management System',
     category: 'Full Stack Web Application',
     description:
-      'A college attendance tracking platform that allows students to monitor subject-wise attendance, view attendance percentages, and receive alerts when attendance falls below required thresholds.',
-    stack: 'React, Firebase, JavaScript, CSS',
+      'An online attendance management system that digitizes classroom attendance, simplifies attendance tracking for faculty, and provides students with real-time attendance reports and analytics.',
+    stack: 'Firebase, JavaScript, CSS',
     image: attendanceImg,
-    alt: 'Student dashboard workspace with laptop and study notes',
-    githubUrl: 'https://gec-sheikhpura.netlify.app/'
+    alt: 'attendance-management-system',
+    link:'https://gec-sheikhpura.netlify.app/',
+    githubUrl: 'https://github.com/SHAFEE12/attendance-management-system'
   },
   {
     id: 'ummeed-foundation-of-india',
@@ -22,23 +23,25 @@ export const projects = [
     category: 'NGO Website',
     description:
       'A modern website developed for an educational NGO focused on empowering students through learning opportunities, career guidance, and skill development initiatives.',
-    stack: 'React, Vite, JavaScript, CSS',
+    stack: ' JavaScript, CSS',
     image:NGO 
     ,
-    alt: 'Students collaborating around a table',
-    githubUrl: 'https://www.ummeedfoundationofindia.org/'
+    alt: 'ummeed-foundation-of-india',
+     link:'https://www.ummeedfoundationofindia.org/',
+    githubUrl: 'https://github.com/SHAFEE12/ummeed-foundation-of-india'
   },
   {
     id: 'netflix ',
     title: 'Netflix ui clone',
     category: 'Frontend Development',
     description:
-      'A responsive shopping experience featuring product listings, modern UI components, and a clean user experience built using modern frontend development practices.',
+      'A responsive Netflix-inspired UI built to replicate the look and feel of the original platform',
     stack: 'HTML, CSS, JavaScript',
     image:netflix
     ,
-    alt: 'Modern online shopping interface shown on a laptop',
-    githubUrl: 'https://nextflixindia.netlify.app/'
+    alt: 'Netflix ui clone',
+       link:'https://nextflixindia.netlify.app/',
+    githubUrl: 'https://github.com/SHAFEE12/netflix-'
   },
   // {
   //   id: 'certificate-gallery',

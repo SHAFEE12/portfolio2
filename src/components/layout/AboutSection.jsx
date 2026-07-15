@@ -55,7 +55,7 @@ export default function AboutSection() {
       >
         <motion.div variants={revealItem}>
           <p className="section-label">About</p>
-          <h2 id="about-title">Building steadily, learning deeply, and turning ideas into products.</h2>
+          <h2 id="about-title"> Built full-stack web applications, solved 80+ DSA problems.</h2>
           <AboutUnderline />
         </motion.div>
         <motion.div className="prose-card" variants={revealItem}>

@@ -1,32 +1,3 @@
-// import { useState } from "react";
-// import EasterEggContext from "./EasterEggContext";
-
-// export default function EasterEggProvider({ children }) {
-//   const [isActive, setIsActive] = useState(false);
-
-//   const startEasterEgg = () => {
-//     setIsActive(true);
-//   };
-
-//   const stopEasterEgg = () => {
-//     setIsActive(false);
-//   };
-
-//   return (
-//     <EasterEggContext.Provider
-//       value={{
-//         isActive,
-//         startEasterEgg,
-//         stopEasterEgg,
-//       }}
-//     >
-//       {children}
-//     </EasterEggContext.Provider>
-//   );
-// }
-
-
-
 
 import { useState } from "react";
 import EasterEggContext from "./EasterEggContext";

@@ -34,7 +34,7 @@ export default function SkillsSection() {
           Skills
         </motion.p>
         <motion.h2 id="skills-title" variants={revealItem}>
-          A practical stack for responsive products and real-world learning.
+         The technologies behind every product I design, build, and deploy.
         </motion.h2>
       </motion.div>
 

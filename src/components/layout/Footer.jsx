@@ -3,7 +3,7 @@ import { fadeUp } from '../../utils/motion.js';
 import { profile } from '../../data/profile.js';
 
 const footerLinks = [
-  { label: 'Work', href: '#work' },
+  { label: 'project', href: '#work' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' }

@@ -8,7 +8,7 @@ export const profile = {
   // location: 'Bihar, India',
   email: 'shafeeahmad.dev@gmail.com',
   github: 'https://github.com/shafee12',
-  linkedin: 'https://linkedin.com/in/yourprofile',
+  linkedin: 'https://www.linkedin.com/in/shafee-ahmad-683236305/',
   about: [
     "I'm Shafee Ahmad, a Computer Science Engineering student passionate about building modern web applications and solving problems through Data Structures and Algorithms.",
     'My focus is on full-stack web development using the MERN stack, creating responsive user experiences, and developing real-world solutions that make an impact. I enjoy turning ideas into functional products while continuously improving my problem-solving and software engineering skills.',
@@ -40,24 +40,24 @@ export const profile = {
   certificates: [
     {
       title: 'Oracle Cloud Infrastructure AI Foundations Associate',
-      description: 'Demo certificate entry for an AI foundations credential. Replace this text, image, and Drive link with the real certificate later.',
+      description: 'Built a strong foundation in Artificial Intelligence and Machine Learning by studying core concepts such as data preprocessing, supervised and unsupervised learning, model evaluation, neural networks, and real-world AI use cases.',
       image: oracle,
-      alt: 'Certificate document on a desk',
-      driveUrl: 'https://drive.google.com/file/d/demo-certificate-one/view'
+      alt: 'Certificate document Oracle',
+      driveUrl: 'https://drive.google.com/file/d/1DDTD_cko7VyKajf7TvXh4PrYOIL7IeYk/view'
     },
     {
-      title: 'IBM SkillsBuild AI Internship',
-      description: 'Demo certificate entry for internship completion and learning achievements. Replace this with your real certificate details.',
+      title: 'EduPyramids, SINE, IIT Bombay.',
+      description: 'Certicate for the Completion of Java Training',
       image: javaCertificate,
-      alt: 'Achievement certificate and notebook',
-      driveUrl: 'https://drive.google.com/file/d/demo-certificate-two/view'
+      alt: 'Achievement certificate java ',
+      driveUrl: 'https://drive.google.com/file/d/1FJDaqvXgahWsx--lIguuCiQeoXN0h8dd/view'
     },
     {
-      title: 'UI/UX Design Certificate',
-      description: 'Demo certificate entry for a user experience design course. Replace this image and text later.',
+      title: 'Internship Completion Certicate',
+      description: 'Developed a responsive E-commerce website using HTML, CSS, and JavaScript. Built interactive product pages with DOM manipulation and JavaScript. ',
       image: internPE,
-      alt: 'Design certificate and tablet',
-      driveUrl: 'https://drive.google.com/file/d/demo-certificate-three/view'
+      alt: 'internship certificate',
+      driveUrl: 'https://drive.google.com/file/d/1urNfSzaMmkimMrKSodHMeDqCeHNVr6Ew/view'
     },
     // {
     //   title: 'Full Stack Development Award',
