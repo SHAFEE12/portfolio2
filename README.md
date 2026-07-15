@@ -17,15 +17,14 @@ Designed with performance, accessibility, scalability, and developer experience 
 
 ---
 
-# 📸 Preview
 
-> Add screenshots or GIFs here.
+## Desktop Preview
 
-```
-assets/
-    preview.png
-    demo.gif
-```
+![Desktop Preview](./verify-desktop.png)
+
+## Mobile Preview
+
+![Mobile Preview](./verify-mobile.png)
 
 ---
 
