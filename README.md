@@ -1,4 +1,4 @@
-# 🚀 Shafee Ahmad | Premium Portfolio
+# 🚀 Shafee Ahmad | Portfolio
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)
