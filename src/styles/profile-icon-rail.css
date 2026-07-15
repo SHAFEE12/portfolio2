@@ -157,8 +157,8 @@ transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 280ms ease;
 
 .robot-loading {
   width: 10%;
-  /* height: 100%; */
-  /* background: radial-gradient(circle at top, rgba(255,255,255,0.16), transparent 55%); */
+  height: 100%; 
+  background: radial-gradient(circle at top, rgba(255,255,255,0.16), transparent 55%);
 }
 
 .robot-loading.overlay {

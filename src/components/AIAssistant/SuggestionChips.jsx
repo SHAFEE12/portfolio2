@@ -6,9 +6,9 @@ const suggestions = [
   { label: "Projects", value: "projects" },
   { label: "Experience", value: "experience" },
   // { label: "Education", value: "education" },
-  { label: "Resume", value: "resume" },
-  { label: "Contact", value: "contact" },
-  { label: "GF", value: "gf" },
+  // { label: "Resume", value: "resume" },
+  // { label: "Contact", value: "contact" },
+  // { label: "GF", value: "gf" },
   { label: "Did I solve DSA problems today?", value: "leetcode" },
   
 

@@ -65,7 +65,7 @@ export default function IntroSection() {
   useEffect(() => {
     if (videoRef.current) {
         registerHeroVideo(videoRef.current);
-        console.log("✅ Hero Video Registered");
+    
     }
 }, []);
 

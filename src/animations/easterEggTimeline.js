@@ -1,21 +1,18 @@
-import { playHeroVideo } from "../utils/videoController";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollToPlugin);
-
-
-
 
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { playHeroVideo } from "../utils/videoController";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 let timeline = null;
 
 // ======================================================
-// Sections Order
+// Sections
 // ======================================================
 
 const sectionOrder = [
-  ".header-section",                                           
+  ".header-section",
   ".about-section",
   ".skills-section",
   ".portfolio-section",
@@ -24,7 +21,7 @@ const sectionOrder = [
 ];
 
 // ======================================================
-// Detect Most Visible Section
+// Detect Current Section
 // ======================================================
 
 function getVisibleSection() {
@@ -61,12 +58,16 @@ function getVisibleSection() {
 // ======================================================
 
 function collapseSection(selector) {
+  if (!timeline) return;
+
   timeline.to(selector, {
     opacity: 0,
-    y: 60,
-    scale: 0.97,
-    duration: 0.45,
+    y: 80,
+    scale: 0.95,
+    duration: 0.55,
   });
+
+  timeline.to({}, { duration: 0.08 });
 }
 
 // ======================================================
@@ -75,12 +76,7 @@ function collapseSection(selector) {
 
 export function startEasterEggTimeline() {
   const currentSection = getVisibleSection();
-
   const currentIndex = sectionOrder.indexOf(currentSection);
-
-  console.log("🎯 Current Section:", currentSection);
-
-  console.log("📍 Index:", currentIndex);
 
   if (timeline) {
     timeline.kill();
@@ -90,12 +86,12 @@ export function startEasterEggTimeline() {
   timeline = gsap.timeline({
     paused: true,
     defaults: {
-      ease: "power2.out",
+      ease: "expo.inOut",
     },
   });
 
   //-------------------------------------------------
-  // AI Assistant
+  // Hide AI Assistant
   //-------------------------------------------------
 
   timeline.to(".ai-section", {
@@ -110,157 +106,76 @@ export function startEasterEggTimeline() {
   // Collapse Current Section ↓ Footer
   //-------------------------------------------------
 
-  for (
-    let i = currentIndex;
-    i < sectionOrder.length;
-    i++
-  ) {
+  for (let i = currentIndex; i < sectionOrder.length; i++) {
     collapseSection(sectionOrder[i]);
   }
 
   //-------------------------------------------------
-  // Scroll will come here later
+  // Scroll To Hero
   //-------------------------------------------------
 
+  timeline.to({}, { duration: 0.4 });
+
+  timeline.to(window, {
+    duration: 1,
+    scrollTo: {
+      y: ".intro-section",
+      offsetY: 0,
+      autoKill: false,
+    },
+    ease: "expo.inOut",
+  });
 
   //-------------------------------------------------
-// Scroll To Hero
-//-------------------------------------------------
+  // Hero Zoom (Optional)
+  //-------------------------------------------------
 
-for (
-  let i = currentIndex;
-  i < sectionOrder.length;
-  i++
-) {
-    collapseSection(sectionOrder[i]);
-}
+  // timeline.to(".hero-image", {
+  //   scale: 1.08,
+  //   duration: 0.8,
+  // });
 
-timeline.to({}, {
-    duration: 0.4,
-});
+  //-------------------------------------------------
+  // Hide Photo
+  //-------------------------------------------------
 
-timeline.to(window, {
-  duration: 1,
-  scrollTo: {
-    y: ".intro-section",
-    offsetY: 0,
-  },
-  ease: "expo.inOut",
-});
-
-
-
-function collapseSection(selector) {
-
-    timeline.to(selector,{
-        opacity:0,
-        y:80,
-        scale:.95,
-        duration:.55,
-    });
-
-    timeline.to({},{
-        duration:.08
-    });
-
-}
-
-
-
-
-
-
-
-// timeline.to({}, { duration: 0.5 });
-
-// timeline.to(window, {
-//   duration: 3,
-//   scrollTo: {
-//     y: ".intro-section",
-//     autoKill: false,
-//   },
-//   ease: "expo.inOut",
-// });
-
-
-
-
-//-------------------------------------------------
-// Hero Zoom
-//-------------------------------------------------
-
-// timeline.to(".hero-image", {
-//     scale: 1.12,
-//     duration: 1,
-//     // ease: "power2.inOut",
-// });
-
-//-------------------------------------------------
-// Hero Photo Fade
-//-------------------------------------------------
-
-timeline.to(".hero-photo", {
+  timeline.to(".hero-photo", {
     opacity: 0,
-    duration: 0.6,
-});
+    duration: 0.5,
+  });
 
+  //-------------------------------------------------
+  // Show Secret Video
+  //-------------------------------------------------
 
-//-------------------------------------------------
-// Show Video
-//-------------------------------------------------
+  timeline.set(".hero-secret-video", {
+    display: "block",
+  });
 
-timeline.to(".hero-secret-video", {
+  timeline.to(".hero-secret-video", {
     opacity: 1,
     duration: 0.6,
-});
+  });
 
-// timeline.call(() => {
+  //-------------------------------------------------
+  // Play Video
+  //-------------------------------------------------
 
-//     console.log("🎥 Play Hero Video");
-
-//     playHeroVideo();
-
-// });
-
-
-timeline.call(() => {
-
-    // Only when playing forward
+  timeline.call(() => {
     if (timeline.reversed()) return;
 
-    console.log("🎥 Play Hero Video");
+    console.log("🎥 Playing Secret Video");
 
     playHeroVideo();
-
-});
-  timeline.to(window,{
-    scrollTo:".intro-section"
-  })
+  });
 
   //-------------------------------------------------
-  // Collapse Above Sections Later
+  // Collapse Remaining (Above) Sections
   //-------------------------------------------------
 
-  // for(
-  //   let i=currentIndex-1;
-  //   i>=0;
-  //   i--
-  // ){
-  //    collapseSection(sectionOrder[i]);
-  // }
-
-
-  //-------------------------------------------------
-// Collapse Remaining Sections
-//-------------------------------------------------
-
-for (
-  let i = currentIndex - 1;
-  i >= 0;
-  i--
-) {
-  collapseSection(sectionOrder[i]);
-}
+  for (let i = currentIndex - 1; i >= 0; i--) {
+    collapseSection(sectionOrder[i]);
+  }
 
   return timeline;
 }
@@ -271,7 +186,6 @@ for (
 
 export function playTimeline() {
   if (!timeline) return;
-
   timeline.play();
 }
 
@@ -279,55 +193,40 @@ export function playTimeline() {
 // Reverse
 // ======================================================
 
-// export function reverseTimeline() {
-//   if (!timeline) return;
-
-//   timeline.reverse();
-// }
-
-
 export function reverseTimeline() {
-
   if (!timeline) return;
 
   timeline.eventCallback("onReverseComplete", () => {
- 
-
-      const video = document.querySelector(".hero-secret-video");
+    const video = document.querySelector(".hero-secret-video");
 
     if (video) {
       video.pause();
       video.currentTime = 0;
     }
 
-    gsap.set([
-        ".header-section",
-        ".about-section",
-        ".skills-section",
-        ".portfolio-section",
-        ".credentials-section",
-        ".footer-section",
+    gsap.set(sectionOrder, {
+      clearProps: "all",
+    });
+
+    gsap.set(
+      [
+        ".ai-section",
         ".assistant-window",
         ".hero-image",
         ".hero-photo",
-        ".hero-secret-video"
-    ], {
-        clearProps: "all"
-    });
-
+        ".hero-secret-video",
+      ],
+      {
+        clearProps: "all",
+      }
+    );
 
     timeline.kill();
-
     timeline = null;
-
-    console.log("✅ Portfolio Restored");
-
   });
 
   timeline.reverse();
-
 }
-
 
 // ======================================================
 // Reset
@@ -335,6 +234,5 @@ export function reverseTimeline() {
 
 export function resetTimeline() {
   if (!timeline) return;
-
   timeline.progress(0).pause();
 }

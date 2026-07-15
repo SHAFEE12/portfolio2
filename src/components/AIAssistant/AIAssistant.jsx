@@ -121,7 +121,7 @@ if (detectSecret(text)) {
     // Small cinematic delay
     setTimeout(() => {
 
-        console.log("🚀 Starting Easter Egg");
+   
 
         startEasterEgg();
 

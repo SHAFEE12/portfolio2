@@ -38,7 +38,7 @@
 } */
 
 .prose-card p {
-  margin: 0;
+  margin: 16px;
   color: var(--color-muted);
   font-size: clamp(1.02rem, 1.45vw, 1.18rem);
 }

@@ -8,12 +8,7 @@ import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: FRONTEND_URL,
-//     credentials: true,
-//   })
-// );
+
 app.use(
   cors({
     origin: [
