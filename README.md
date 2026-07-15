@@ -3,7 +3,6 @@
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
 A premium full-stack developer portfolio built with **React**, **Vite**, **Node.js**, and modern animation libraries.
@@ -294,10 +293,10 @@ GitHub:
 https://github.com/SHAFEE12
 
 LinkedIn:
-https://linkedin.com/in/shafee-ahmad
+https://www.linkedin.com/in/shafee-ahmad-683236305
 
 Email:
-your-email@example.com
+shafeeahmad.dev@gmail.com
 
 ---
 
@@ -309,6 +308,3 @@ It helps others discover the project and motivates further improvements.
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
