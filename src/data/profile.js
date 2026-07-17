@@ -47,7 +47,7 @@ export const profile = {
     },
     {
       title: 'EduPyramids, SINE, IIT Bombay.',
-      description: 'Certicate for the Completion of Java Training',
+      description: 'Certificate for the Completion of Java Training',
       image: javaCertificate,
       alt: 'Achievement certificate java ',
       driveUrl: 'https://drive.google.com/file/d/1FJDaqvXgahWsx--lIguuCiQeoXN0h8dd/view'
