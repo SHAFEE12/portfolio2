@@ -1,6 +1,6 @@
 import Chat from "../models/Chat.js";
 
-// Save a new chat message
+
 export const saveChat = async (req, res) => {
   try {
     const {
@@ -40,7 +40,7 @@ export const saveChat = async (req, res) => {
   }
 };
 
-// Get all chat messages
+
 export const getChats = async (req, res) => {
   try {
     const chats = await Chat.find().sort({ createdAt: -1 });

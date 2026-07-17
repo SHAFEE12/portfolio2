@@ -248,9 +248,8 @@ LEETCODE_USERNAME=YOUR_USERNAME
 - AI Resume Analyzer
 - Project CMS
 - GitHub Analytics
-- Visitor Analytics
 - Contact Dashboard
-- Multi-language support
+
 
 ---
 
