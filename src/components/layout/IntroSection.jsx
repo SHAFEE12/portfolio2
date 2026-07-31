@@ -144,7 +144,7 @@ export default function IntroSection() {
             {/* <strong>MERN + DSA</strong> */}
           </div>
           <div className="hero-stat hero-stat-two">
-            <span>Interview Ready</span>
+            <span>Ai engineer</span>
             {/* <strong>Interview Ready</strong> */}
           </div>
         </div>
