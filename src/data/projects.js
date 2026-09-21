@@ -1,6 +1,6 @@
 import attendanceImg from "../assets/attendance.png";
 import NGO from "../assets/ummeed_foundation.png";
-import netflix from "../assets/netflix.png";
+import careerodyssey from "../assets/careerOdyssey.png";
 
 
 
@@ -32,16 +32,16 @@ export const projects = [
   },
   {
     id: 'netflix ',
-    title: 'Netflix ui clone',
-    category: 'Frontend Development',
+    title: 'creerOdyssey',
+    category: 'AI powered full stack platform',
     description:
-      'A responsive Netflix-inspired UI built to replicate the look and feel of the original platform',
-    stack: 'HTML, CSS, JavaScript',
-    image:netflix
+      'build a ecosystem that connects students, industry, institute and faculty',
+    stack: 'MERN',
+    image:careerodyssey
     ,
-    alt: 'Netflix ui clone',
-       link:'https://nextflixindia.netlify.app/',
-    githubUrl: 'https://github.com/SHAFEE12/netflix-'
+    alt: 'careerodyssey',
+       link:'https://careerodyssey.vercel.app/',
+    githubUrl: ''
   },
   // {
   //   id: 'certificate-gallery',

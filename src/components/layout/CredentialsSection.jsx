@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+﻿ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { revealItem, staggerContainer } from '../../utils/motion.js';
