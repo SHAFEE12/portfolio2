@@ -32,7 +32,7 @@ export const projects = [
   },
   {
     id: 'netflix ',
-    title: 'creerOdyssey',
+    title: 'careerOdyssey',
     category: 'AI powered full stack platform',
     description:
       'build a ecosystem that connects students, industry, institute and faculty',
