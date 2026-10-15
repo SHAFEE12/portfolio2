@@ -1,0 +1,24 @@
+warning: in the working copy of 'src/components/layout/IntroSection.jsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/components/layout/IntroSection.jsx b/src/components/layout/IntroSection.jsx[m
+[1mindex 9f7a135..bb9c79d 100644[m
+[1m--- a/src/components/layout/IntroSection.jsx[m
+[1m+++ b/src/components/layout/IntroSection.jsx[m
+[36m@@ -27,16 +27,8 @@[m [mfunction OpenIcon() {[m
+ export default function IntroSection() {[m
+ [m
+   const handleVideoEnd = () => {[m
+[31m-[m
+[31m-  reverseTimeline();[m
+[31m-[m
+[31m-  setTimeout(() => {[m
+[31m-[m
+[31m-    stopEasterEgg();[m
+[31m-[m
+[31m-  }, 1200);[m
+[31m-[m
+[31m-};[m
+[32m+[m[32m    reverseTimeline(() => stopEasterEgg());[m
+[32m+[m[32m  };[m
+ [m
+     const { isActive, stopEasterEgg } = useEasterEgg();[m
+     const videoRef = useRef(null);[m

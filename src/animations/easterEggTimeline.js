@@ -21,53 +21,52 @@ const sectionOrder = [
 ];
 
 // ======================================================
-// Detect Current Section
+// Detect Visible Section Chain
 // ======================================================
 
-function getVisibleSection() {
-  let active = ".header-section";
-  let maxVisible = 0;
+function getVisibleSections() {
+  const visible = sectionOrder
+    .map((selector) => {
+      const element = document.querySelector(selector);
 
-  sectionOrder.forEach((selector) => {
-    const element = document.querySelector(selector);
+      if (!element) return null;
 
-    if (!element) return;
+      const rect = element.getBoundingClientRect();
+      const visibleHeight =
+        Math.min(rect.bottom, window.innerHeight) -
+        Math.max(rect.top, 0);
+      const visibility = Math.max(0, visibleHeight / rect.height);
 
-    const rect = element.getBoundingClientRect();
+      return {
+        selector,
+        visibility,
+        visibleHeight,
+        top: rect.top,
+      };
+    })
+    .filter((item) => item && item.visibleHeight > 0)
+    .sort((a, b) => a.top - b.top);
 
-    const visibleHeight =
-      Math.min(rect.bottom, window.innerHeight) -
-      Math.max(rect.top, 0);
+  if (!visible.length) {
+    return [{ selector: ".header-section", visibility: 1, visibleHeight: 1, top: 0 }];
+  }
 
-    const visibility = Math.max(
-      0,
-      visibleHeight / rect.height
-    );
+  const strongestIndex = visible.reduce(
+    (winnerIndex, current, currentIndex, list) =>
+      current.visibility > list[winnerIndex].visibility ? currentIndex : winnerIndex,
+    0
+  );
 
-    if (visibility > maxVisible) {
-      maxVisible = visibility;
-      active = selector;
-    }
-  });
-
-  return active;
+  return sectionOrder.slice(
+    sectionOrder.indexOf(visible[strongestIndex].selector),
+    sectionOrder.length
+  ).map((selector) => ({ selector }));
 }
 
-// ======================================================
-// Collapse Animation
-// ======================================================
+function getVisibleSection() {
+  const visible = getVisibleSections();
 
-function collapseSection(selector) {
-  if (!timeline) return;
-
-  timeline.to(selector, {
-    opacity: 0,
-    y: 80,
-    scale: 0.95,
-    duration: 0.55,
-  });
-
-  timeline.to({}, { duration: 0.08 });
+  return visible[0]?.selector || ".header-section";
 }
 
 // ======================================================
@@ -75,6 +74,7 @@ function collapseSection(selector) {
 // ======================================================
 
 export function startEasterEggTimeline() {
+  const visibleSections = getVisibleSections();
   const currentSection = getVisibleSection();
   const currentIndex = sectionOrder.indexOf(currentSection);
 
@@ -86,96 +86,102 @@ export function startEasterEggTimeline() {
   timeline = gsap.timeline({
     paused: true,
     defaults: {
-      ease: "expo.inOut",
+      ease: "power3.inOut",
     },
   });
 
-  //-------------------------------------------------
-  // Hide AI Assistant
-  //-------------------------------------------------
-
-  timeline.to(".ai-section", {
-    opacity: 0,
-    y: 40,
-    duration: 0.45,
-  });
-
-  timeline.to({}, { duration: 0.3 });
+  const collapseStart = 0.12;
+  const sectionStep = 0.28;
+  const collapseTargets = visibleSections.map((item) => item.selector);
 
   //-------------------------------------------------
-  // Collapse Current Section ↓ Footer
+  // Hide AI Assistant + collapse only the visible chain
   //-------------------------------------------------
 
-  for (let i = currentIndex; i < sectionOrder.length; i++) {
-    collapseSection(sectionOrder[i]);
-  }
-
-  //-------------------------------------------------
-  // Scroll To Hero
-  //-------------------------------------------------
-
-  timeline.to({}, { duration: 0.4 });
-
-  timeline.to(window, {
-    duration: 1,
-    scrollTo: {
-      y: ".intro-section",
-      offsetY: 0,
-      autoKill: false,
+  timeline.to(
+    ".ai-section",
+    {
+      opacity: 0,
+      y: 28,
+      duration: 0.5,
+      ease: "power3.inOut",
     },
-    ease: "expo.inOut",
+    0
+  );
+
+  collapseTargets.forEach((selector, index) => {
+    const isLast = index === collapseTargets.length - 1;
+    const delay = collapseStart + index * sectionStep;
+    const scrollTarget = isLast ? ".intro-section" : collapseTargets[index + 1];
+
+    timeline.to(
+      selector,
+      {
+        opacity: 0,
+        y: 72,
+        scale: 0.985,
+        duration: 0.52,
+        ease: "power3.inOut",
+      },
+      delay
+    );
+
+    timeline.to(
+      window,
+      {
+        duration: isLast ? 1.2 : 0.55,
+        scrollTo: {
+          y: scrollTarget,
+          offsetY: 0,
+          autoKill: false,
+        },
+        ease: "power2.inOut",
+      },
+      delay
+    );
   });
 
-  //-------------------------------------------------
-  // Hero Zoom (Optional)
-  //-------------------------------------------------
-
-  // timeline.to(".hero-image", {
-  //   scale: 1.08,
-  //   duration: 0.8,
-  // });
+  const heroStart = collapseStart + collapseTargets.length * sectionStep + 0.16;
 
   //-------------------------------------------------
-  // Hide Photo
+  // Hero Photo → Secret Video Crossfade
   //-------------------------------------------------
 
-  timeline.to(".hero-photo", {
-    opacity: 0,
-    duration: 0.5,
-  });
+  timeline.to(
+    ".hero-photo",
+    {
+      opacity: 0,
+      scale: 1.04,
+      filter: "blur(7px)",
+      duration: 0.78,
+      ease: "power3.inOut",
+    },
+    heroStart
+  );
 
-  //-------------------------------------------------
-  // Show Secret Video
-  //-------------------------------------------------
+  timeline.set(
+    ".hero-secret-video",
+    {
+      display: "block",
+      opacity: 0,
+    },
+    heroStart
+  );
 
-  timeline.set(".hero-secret-video", {
-    display: "block",
-  });
-
-  timeline.to(".hero-secret-video", {
-    opacity: 1,
-    duration: 0.6,
-  });
-
-  //-------------------------------------------------
-  // Play Video
-  //-------------------------------------------------
+  timeline.to(
+    ".hero-secret-video",
+    {
+      opacity: 1,
+      duration: 0.72,
+      ease: "power3.inOut",
+    },
+    heroStart + 0.08
+  );
 
   timeline.call(() => {
-    if (timeline.reversed()) return;
-
-    console.log("🎥 Playing Secret Video");
-
+    if (!timeline || timeline.reversed()) return;
     playHeroVideo();
-  });
-
-  //-------------------------------------------------
-  // Collapse Remaining (Above) Sections
-  //-------------------------------------------------
-
-  for (let i = currentIndex - 1; i >= 0; i--) {
-    collapseSection(sectionOrder[i]);
-  }
+  }, [], heroStart + 0.2);
 
   return timeline;
 }
@@ -193,10 +199,10 @@ export function playTimeline() {
 // Reverse
 // ======================================================
 
-export function reverseTimeline() {
+export function reverseTimeline(onComplete) {
   if (!timeline) return;
 
-  timeline.eventCallback("onReverseComplete", () => {
+  const complete = () => {
     const video = document.querySelector(".hero-secret-video");
 
     if (video) {
@@ -221,10 +227,15 @@ export function reverseTimeline() {
       }
     );
 
+    if (typeof onComplete === "function") {
+      onComplete();
+    }
+
     timeline.kill();
     timeline = null;
-  });
+  };
 
+  timeline.eventCallback("onReverseComplete", complete);
   timeline.reverse();
 }
 

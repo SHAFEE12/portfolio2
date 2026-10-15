@@ -11,7 +11,7 @@ export const projects = [
     category: 'Full Stack Web Application',
     description:
       'An online attendance management system that digitizes classroom attendance, simplifies attendance tracking for faculty, and provides students with real-time attendance reports and analytics.',
-    stack: 'Firebase, JavaScript, CSS',
+    technologies: ['Firebase', 'JavaScript', 'CSS'],
     image: attendanceImg,
     alt: 'attendance-management-system',
     link:'https://gec-sheikhpura.netlify.app/',
@@ -23,7 +23,7 @@ export const projects = [
     category: 'NGO Website',
     description:
       'A modern website developed for an educational NGO focused on empowering students through learning opportunities, career guidance, and skill development initiatives.',
-    stack: ' JavaScript, CSS',
+    technologies: ['JavaScript', 'CSS'],
     image:NGO 
     ,
     alt: 'ummeed-foundation-of-india',
@@ -36,7 +36,7 @@ export const projects = [
     category: 'AI powered full stack platform',
     description:
       'build a ecosystem that connects students, industry, institute and faculty',
-    stack: 'MERN',
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
     image:careerodyssey
     ,
     alt: 'careerodyssey',

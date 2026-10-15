@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { revealItem, staggerContainer } from '../../utils/motion.js';
+import SectionTitle from '../ui/SectionTitle.jsx';
 
 export default function CredentialsSection() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function CredentialsSection() {
 
   return (
     <section className="content-section container credentials-section" id="education" aria-labelledby="education-title">
+      <SectionTitle>Education &amp; Certificates</SectionTitle>
       <motion.div
         className="credential-grid"
         initial="hidden"
@@ -31,7 +33,7 @@ export default function CredentialsSection() {
         variants={staggerContainer}
       >
         <div>
-          <p className="section-label">Education</p>
+          <p className="credential-label">Education</p>
           <motion.article className="info-card education-card" variants={revealItem}>
             <h2 id="education-title">{profile.education.degree}</h2>
             <p>{profile.education.institute}</p>
@@ -40,7 +42,7 @@ export default function CredentialsSection() {
         </div>
 
         <div>
-          <p className="section-label">Certificate Gallery</p>
+          <p className="credential-label">Certificate Gallery</p>
           <motion.article className="info-card certificate-card" variants={revealItem}>
             <button className="certificate-preview" type="button" onClick={() => setIsGalleryOpen(true)}>
               <img src={featuredCertificate.image} alt={featuredCertificate.alt} loading="lazy" />

@@ -20,45 +20,26 @@
 }
 
 .footer-main {
+  position: relative;
   background: #212121;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  /* padding: clamp(24px, 4vw, 32px); */
+  padding: clamp(46px, 6vw, 72px) clamp(24px, 4vw, 32px) clamp(24px, 4vw, 32px);
   border: 1px solid rgba(255, 255, 255, 0.36);
   /* border-radius: 0; */
   background: transparent;
   /* box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04); */
 }
 
-.footer-main .section-label {
-  /* background: #212121; */
-  color: rgb(230, 102, 10);
-  border-right: 1px solid rgba(255, 255, 255, 0.36);
-  width: 130px;        
-  height: 60px;  
-  padding: 20px;   
-  margin-bottom:0;     
-   display: flex;
-    margin-bottom: 0;
- gap:200px;
-    align-items: center;
-    justify-content: space-between; 
-
-
-}
-
-.footer-main .section-label span {
- 
-  padding:0px;
-   text-transform: lowercase;
-  
+.footer-main .section-title {
+  background: #e7e7e7;
 }
 .footer-main h2 {
   width: 100%;
   margin-top: 0;
   /* background: #212121; */
-  padding: 25px;
+  padding: 25px 0 0;
   font-size: clamp(3rem, 4vw, 4.4rem);
   border-top: 1px solid rgba(255, 255, 255, 0.36);
 }
@@ -78,6 +59,12 @@
   color: white;
 animation: none;
   /* border: 1px solid rgba(255, 255, 255); */
+}
+
+.footer-contact-email {
+  min-height: auto;
+  padding: 0;
+  color: #fff;
 }
 
 .footer-main .project-links{
@@ -123,33 +110,6 @@ animation: none;
     width: 100%;
     margin-top: 18px;
   }
-
-.footer-main .section-label {
-  /* background: #212121; */
-  color: rgb(230, 102, 10);
-  border-right: 1px solid rgba(255, 255, 255, 0.36);
-  /* width: 130px;        
-  height: 60px;  
-  padding: 20px;    */
-   
-   display: flex;
-    margin-bottom: 0;
- gap:20px;
-    align-items: center;
-    justify-content: space-between; 
-
-
-}
-
-.footer-main .section-label span {
- 
-  padding:0px;
-   text-transform: lowercase;
-  font-size: 13px;
-  font-weight:200px;
-  background:none;
-  
-}
 
   .footer-bottom {
     display: flex;

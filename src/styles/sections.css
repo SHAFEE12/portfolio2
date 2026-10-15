@@ -1,9 +1,39 @@
 .content-section {
-  padding-block: clamp(8px, 9vw, 90px);
-  border : 1px solid rgb(83, 81, 81);
-  border-radius:30px;
-  padding:6px;
-  margin-bottom: 13px;
+  position: relative;
+  padding: clamp(26px, 2.5vw, 34px) clamp(14px, 3vw, 24px) clamp(12px, 2vw, 18px);
+  border: 1px solid rgb(83, 81, 81);
+  border-radius: 30px;
+  margin-bottom: clamp(80px, 9vw, 128px);
+}
+
+/* Keep anchor targets below the fixed navigation instead of underneath it. */
+#about,
+#skills,
+#work,
+#education,
+#contact {
+  scroll-margin-top: 126px;
+}
+
+.section-title {
+  position: absolute;
+  z-index: 2;
+  top: -87px;
+ 
+  max-width: calc(100% - 32px);
+  margin-top: 80;
+  padding: 12px clamp(24px, 4vw, 44px);
+  overflow-wrap: anywhere;
+  color: #111;
+  background: #e7e7e7;
+  border-radius: 999px;
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translate(-20%, -20%);
 }
 
 /* #about {
@@ -13,7 +43,7 @@
 
 .section-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 0.8fr) minmax(360px, 1fr);
+  
   gap: clamp(14px, 7vw, 32px);
   align-items: start;
 }
@@ -49,7 +79,7 @@
 
 .section-heading {
   max-width: 800px;
-  margin-bottom: clamp(28px, 5vw, 56px);
+  margin-bottom: clamp(12px, 1.5vw, 18px);
 }
 
 .skill-grid {
@@ -93,6 +123,7 @@
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 6px;
   font-size: 0.9rem;
+  font-weight: 600;
   line-height: 1;
 }
 
@@ -101,6 +132,14 @@
   height: 1.05em;
   flex: 0 0 1.05em;
   object-fit: contain;
+}
+
+.credential-label {
+  margin: 0 0 18px;
+  color: #fb6900;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .section-label {
   font-size:20px;

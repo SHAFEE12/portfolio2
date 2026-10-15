@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile.js';
 import { revealItem, staggerContainer } from '../../utils/motion.js';
+import SectionTitle from '../ui/SectionTitle.jsx';
 
 
 const techIconUrls = {
@@ -21,21 +22,27 @@ const techIconUrls = {
 };
 
 export default function SkillsSection() {
+
+
   return (
+     
     <section className="content-section container" id="skills" aria-labelledby="skills-title">
+      <SectionTitle>Skills</SectionTitle>
+
       <motion.div
         className="section-heading"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
         variants={staggerContainer}
+
+          
+        
       >
-        <motion.p className="section-label" variants={revealItem}>
-          Skills
-        </motion.p>
+         
         <motion.h2 id="skills-title" variants={revealItem}>
          The technologies behind every product I design, build, and deploy.
-        </motion.h2>
+        </motion.h2> 
       </motion.div>
 
       <motion.div

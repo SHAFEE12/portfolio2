@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { fadeUp } from '../../utils/motion.js';
 import { profile } from '../../data/profile.js';
+import SectionTitle from '../ui/SectionTitle.jsx';
 
 const footerLinks = [
   { label: 'project', href: '#work' },
@@ -28,6 +29,7 @@ export default function Footer() {
 
 
          <div className="footer-main">
+          <SectionTitle>Contact</SectionTitle>
 
 
 {/* 
@@ -61,10 +63,10 @@ export default function Footer() {
 
 
 
-          <p className="section-label">Contact <span><a className="email-pill" href={`mailto:${profile.email}`}>
+          <a className="email-pill footer-contact-email" href={`mailto:${profile.email}`}>
             {profile.email}
-          </a></span></p>
-          <h2>Thanks for visiting my portfolio.</h2>
+          </a>
+          {/* <h2>Thanks for visiting my portfolio.</h2> */}
           <div className="footer-divider" aria-hidden="true" />
         {/* <a className="project-links" href="https://www.ummeedfoundationofindia.org/"   target="_blank" rel="noopener noreferrer"> 
                  ummeedfoundationofindia.org</a> */}

@@ -98,6 +98,37 @@
   overflow-wrap: anywhere;
 }
 
+.hero-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -307,10 +338,11 @@
 
 .hero-image{
     position: relative;
-    width: 100%;
+    width: clamp(130px, 17vw, 220px);
     aspect-ratio: 1 / 1;
+    margin-inline: auto;
     overflow: hidden;
-    border-radius: 24px;
+    border-radius: 50%;
 }
 
 .hero-photo{

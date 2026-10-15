@@ -1,6 +1,7 @@
 
 import { forwardRef } from 'react';
 import AnimatedButton from '../ui/AnimatedButton.jsx';
+import ProjectTechStack from './ProjectTechStack.jsx';
 
 const PortfolioCard = forwardRef(function PortfolioCard(
   { project, className = '', style, ...props },
@@ -18,18 +19,15 @@ const PortfolioCard = forwardRef(function PortfolioCard(
           <AnimatedButton href={project.link}>
             live
           </AnimatedButton>
-          <AnimatedButton href={project.githubUrl}>
-            GitHub
-          </AnimatedButton>
+          {project.githubUrl && (
+            <AnimatedButton href={project.githubUrl}>
+              GitHub
+            </AnimatedButton>
+          )}
         </div>
-
-        <p className="project-category">{project.category}</p>
-
         <h3>{project.title}</h3>
-
-        <p>{project.description}</p>
-
-        <p className="project-stack">{project.stack}</p>
+        <p className="project-description">{project.description}</p>
+        <ProjectTechStack technologies={project.technologies} />
       </div>
 
       <figure className="project-media">

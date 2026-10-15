@@ -16,7 +16,7 @@ export default function PortfolioStack({ projects }) {
 
     const handleScroll = () => {
       cards.forEach((card, index) => {
-        const offsetTop = 20 + index * 20;
+        const offsetTop = index * 20;
 
         card.style.paddingTop = `${offsetTop}px`;
 

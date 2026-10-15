@@ -39,6 +39,10 @@
 }
 
 @media (max-width: 809px) {
+  .content-section {
+    padding-top: 52px;
+  }
+
   .container {
     width: calc(100% - 48px);
     max-width: none;
@@ -114,19 +118,45 @@ nav.glass-nav {
   
   .hero-actions {
     align-items: stretch;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
   .primary-link,
   .secondary-link {
-    width: calc(100% - 1px);
+    width: auto;
     min-width: 0;
     overflow-wrap: anywhere;
     text-align: center;
   }
 
+  .primary-link {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding-inline: 12px;
+  }
+
+  .secondary-link {
+    flex: 1 1 auto;
+    min-height: 38px;
+    padding-inline: 10px;
+    font-size: 0.78rem;
+  }
+
   .hero-visual {
-    min-height: 270px;
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    width: 100px;
+    min-height: 100px;
+    margin-top: 0;
+    order: initial;
+  }
+
+  .hero-image {
+    width: 96px;
+    margin: 0;
   }
 
   .hero-stat {
@@ -144,7 +174,7 @@ nav.glass-nav {
     top: 14px;
   }
 
-  .content-section {
+  e {
     padding-block: 16px;
   }
 
@@ -169,8 +199,46 @@ nav.glass-nav {
   }
 
   .portfolio-card {
-    padding: 22px;
+    gap: 0;
+    padding: 0;
     border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .project-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+  }
+
+  .project-content h3 {
+    min-height: 0;
+    padding: 14px 12px;
+  }
+
+  .project-description {
+    padding: 12px;
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .project-actions {
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .project-tech-list {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .project-tech-list li {
+    width: 22px;
+    height: 22px;
   }
 
   .project-content h3 {
@@ -188,9 +256,14 @@ nav.glass-nav {
 
 
   #intro-title {
-  font-size: clamp(2.5rem, 8vw, 15rem);
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
   font-weight: 700;
-  text-align: center;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 96px;
+  padding-left: 112px;
   white-space: nowrap;      /* Prevent line break */
   overflow: hidden;         /* Optional */
   text-overflow: ellipsis;  /* Optional */

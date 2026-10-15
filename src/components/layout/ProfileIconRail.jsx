@@ -66,7 +66,6 @@ const links = [
 
 export default function ProfileIconRail() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [isRailOpen, setIsRailOpen] = useState(true);
   const [showSpline, setShowSpline] = useState(false);
   const [robotLoaded, setRobotLoaded] = useState(false);
 
@@ -80,40 +79,6 @@ export default function ProfileIconRail() {
 
   return (
     <>
-      <nav className="profile-icon-rail" aria-label="Profile links">
-        <button
-          type="button"
-          className={`profile-icon-toggle ${isRailOpen ? 'open' : 'closed'}`}
-          aria-label={isRailOpen ? 'Hide profile links' : 'Show profile links'}
-          onClick={() => setIsRailOpen((prev) => !prev)}
-        >
-          {isRailOpen ? (
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 6 15 12 9 18" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-            </svg>
-          )}
-        </button>
-
-        <div className={`profile-icon-links ${isRailOpen ? 'visible' : 'hidden'}`}>
-          {links.map((link) => (
-            <a
-              key={link.label}
-              className={link.className}
-              href={link.href}
-              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-              rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-              aria-label={link.label}
-            >
-              {link.icon}
-            </a>
-          ))}
-        </div>
-      </nav>
-
       <button
         type="button"
         className="ai-assistant-trigger"

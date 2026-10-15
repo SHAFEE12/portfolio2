@@ -4,13 +4,16 @@ import { fadeUp } from '../../utils/motion.js';
 import { profile } from '../../data/profile.js';
 
 const navItems = [
-  { label: 'project', href: '#work' },
-  { label: 'About', href: '#about' },
+  {
+    label: 'CareerOdyssey',
+    href: 'https://careerodyssey.vercel.app/',
+    target: '_blank',
+  },
+  { label: 'Project', href: '#work' },
   { label: 'Skills', href: '#skills' },
-  { label: 'certificates', href: '#education' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Certificates', href: '#education' },
+  { label: 'Contact', href: '#contact' },
 ];
-
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

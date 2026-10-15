@@ -8,7 +8,7 @@ const suggestions = [
   // { label: "Education", value: "education" },
   // { label: "Resume", value: "resume" },
   // { label: "Contact", value: "contact" },
-  // { label: "GF", value: "gf" },
+ { label: "GF", value: "gf" },
   { label: "Did I solve DSA problems today?", value: "leetcode" },
   
 
